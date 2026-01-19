@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Life Point Academy | Admin Login </title>
+
+<link rel="icon" href="assets/images/auth/First Point Logo.webp">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+  --blue:#1f3c88;
+  --blue-soft:#eef2ff;
+  --red:#c62828;
+  --red-soft:#fdecec;
+  --white:#ffffff;
+  --border:#e6e9f0;
+  --text:#2b2b2b;
+}
+
+/* Reset & Body */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+body{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,var(--blue-soft),var(--white));
+}
+
+/* MAIN CARD */
+.wrapper{
+  width:95%;
+  max-width:1150px;
+  display:flex;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 30px 70px rgba(0,0,0,.12);
+  animation:cardEnter .9s ease;
+  background:var(--white);
+}
+@keyframes cardEnter{
+  from{opacity:0;transform:translateY(25px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* LEFT PANEL - GLASS STYLE */
+.image-side{
+  flex:1;
+  padding:60px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(255,255,255,.6);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  overflow:hidden;
+  border-right:2px solid var(--blue);
+}
+
+/* Logo watermark */
+.image-side::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    url("assets/images/auth/First Point Logo.webp")
+    center/280px no-repeat;
+  opacity:.18; /* clearer logo */
+  z-index:0;
+}
+
+/* Soft color overlay */
+.image-side::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(135deg, rgba(31,60,136,.2), rgba(198,40,40,.15));
+  z-index:0;
+}
+
+/* Content container */
+.glass-content{
+  position:relative;
+  max-width:460px;
+  text-align:left;
+  z-index:2;
+}
+
+/* Title */
+.glass-content h1{
+  font-size:2.3rem;
+  font-weight:700;
+  color:var(--blue);
+  margin-bottom:22px;
+  line-height:1.25;
+}
+
+/* Sliding text */
+.text-slideshow{
+  position:relative;
+  height:72px;
+  overflow:hidden;
+  margin-top:16px;
+  border-bottom:3px solid;
+  border-image: linear-gradient(90deg,var(--blue),var(--red)) 1;
+}
+.slide-text{
+  position:absolute;
+  opacity:0;
+  transform:translateY(16px);
+  font-size:1.05rem;
+  line-height:1.7;
+  color:#222;
+  animation:textFade 18s infinite;
+}
+.slide-text strong{
+  color:var(--red);
+  font-weight:600;
+}
+.slide-text:nth-child(1){animation-delay:0s}
+.slide-text:nth-child(2){animation-delay:6s}
+.slide-text:nth-child(3){animation-delay:12s}
+@keyframes textFade{
+  0%{opacity:0;transform:translateY(16px)}
+  10%,30%{opacity:1;transform:translateY(0)}
+  40%,100%{opacity:0;transform:translateY(-16px)}
+}
+
+/* RIGHT PANEL */
+.login-section{
+  flex:1;
+  padding:64px 56px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+/* Square logo */
+.logo-box{
+  width:105px;
+  height:105px;
+  border-radius:14px;
+  border:2px solid var(--blue);
+  padding:10px;
+  background:var(--white);
+  margin-bottom:20px;
+}
+.logo-box img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+/* Title */
+.login-section h2{
+  font-size:1.5rem;
+  font-weight:600;
+  color:var(--blue);
+  margin-bottom:28px;
+}
+
+/* FORM */
+form{
+  width:100%;
+  max-width:380px;
+}
+.input-group{
+  position:relative;
+  margin-bottom:22px;
+}
+.input-group input{
+  width:100%;
+  padding:15px 46px 15px 16px;
+  border-radius:10px;
+  border:1.6px solid var(--border);
+  font-size:15px;
+  background:#fff;
+  transition:.25s ease;
+}
+.input-group input:focus{
+  outline:none;
+  border-color:var(--blue);
+  box-shadow:
+    0 0 0 3px rgba(31,60,136,.15),
+    0 0 12px rgba(31,60,136,.15);
+}
+.input-group i{
+  position:absolute;
+  right:15px;
+  top:15px;
+  color:var(--red);
+}
+
+/* BUTTON */
+button{
+  width:100%;
+  padding:15px;
+  border:none;
+  border-radius:10px;
+  background:linear-gradient(135deg,var(--blue),var(--red));
+  color:#fff;
+  font-weight:600;
+  font-size:16px;
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+  transition:.3s ease;
+}
+button::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at center, rgba(255,255,255,.35),transparent 60%);
+  opacity:0;
+  transition:.3s ease;
+}
+button:hover::after{
+  opacity:1;
+}
+button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 30px rgba(31,60,136,.35);
+}
+
+/* FOOTER */
+.footer-text{
+  margin-top:26px;
+  font-size:12.5px;
+  color:#777;
+  text-align:center;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .wrapper{
+    flex-direction:column;
+  }
+  .image-side{
+    padding:40px;
+    text-align:center;
+    border-right:none;
+    border-bottom:3px solid var(--blue);
+  }
+}
+
+@media(max-width:600px){
+  .login-section{
+    padding:40px 26px;
+  }
+  .glass-content h1{
+    font-size:1.7rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+  <!-- LEFT – GLASS PANEL -->
+  <div class="image-side">
+    <div class="glass-content">
+      <h1>Welcome to First Point Academy</h1>
+      <div class="text-slideshow">
+        <div class="slide-text">
+          A modern academic institution focused on <strong>excellence</strong>, discipline, and innovation.
+        </div>
+        <div class="slide-text">
+          Trusted by parents and educators for <strong>accurate result management</strong> and transparency.
+        </div>
+        <div class="slide-text">
+          Empowering students with technology-driven learning and <strong>secure digital records</strong>.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="login-section">
+    <div class="logo-box">
+      <img src="assets/images/auth/First Point Logo.webp" alt="School Logo">
+    </div>
+
+    <h2>Admin Login</h2>
+
+     <form id="loginForm">
+      <div class="input-group">
+        <input id="email" type="email" placeholder="Email address" required>
+        <i class="fa-solid fa-envelope"></i>
+      </div>
+
+      <div class="input-group">
+        <input id="password" type="password" placeholder="Password" required>
+        <i class="fa-solid fa-lock"></i>
+      </div>
+
+      <button type="submit" id="loginBtn">Sign In</button>
+    </form>
+
+    <div class="footer-text">
+      © 2026 Life Point Academy
+    </div>
+  </div>
+
+</div>
+
+<!-- ERROR MODAL -->
+<div id="errorModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);align-items:center;justify-content:center;z-index:1000;">
+  <div style="background:#fff;padding:20px;border-radius:10px;max-width:300px;text-align:center;position:relative;">
+    <span id="closeModal" style="position:absolute;top:8px;right:12px;cursor:pointer;font-size:18px;">&times;</span>
+    <p id="modalMessage">Login failed. Please try again.</p>
+  </div>
+</div>
+
+<script type="module" src="/assets/js/login.js"></script>
+
+</body>
+</html>
