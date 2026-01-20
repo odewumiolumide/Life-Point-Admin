@@ -5310,3 +5310,271 @@ document.getElementById("headTeacherRemark").value = headRemarkAuto;
         setTimeout(() => { if (addRowBtn) addRowBtn.style.display = "inline-block"; }, 300);
     };
 });
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Student Result | Damotak International School</title>
+
+<style>
+:root {
+  --primary: #1c3d72;
+  --secondary: #2c3e50;
+  --border-soft: #ddd;
+}
+
+/* ================= GLOBAL ================= */
+body {
+  font-family: "Segoe UI", Calibri, sans-serif;
+  margin: 20px;
+  color: var(--secondary);
+  background: #fff;
+  line-height: 1.5;
+  position: relative;
+}
+
+/* Watermark */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("assets/images/auth/Damotak Logo.png") no-repeat center;
+  background-size: 35%;
+  opacity: 0.04;
+  z-index: -1;
+}
+
+/* ================= HEADER ================= */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 4px solid var(--primary);
+  padding-bottom: 12px;
+  margin-bottom: 15px;
+}
+
+.header-left img {
+  width: 120px;
+  border: 3px solid var(--primary);
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.header-right {
+  text-align: right;
+}
+
+.header-right h2 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--primary);
+  text-transform: uppercase;
+}
+
+.header-right p {
+  margin: 2px 0;
+  font-size: 12px;
+}
+
+/* Academic Session Bar */
+.session-bar {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px;
+  border: 1px solid var(--border-soft);
+  background: #f7f9fc;
+  margin-bottom: 15px;
+}
+
+/* ================= INFO BOXES ================= */
+.info-boxes {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.section {
+  flex: 1;
+  min-width: 260px;
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.section-title {
+  background: var(--primary);
+  color: #fff;
+  padding: 6px 10px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.section-content {
+  padding: 10px;
+  font-size: 12px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.info-grid strong {
+  color: var(--primary);
+}
+
+/* ================= TABLES ================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+th {
+  background: var(--primary);
+  color: #fff;
+  padding: 6px;
+  border: 1px solid #fff;
+}
+
+td {
+  padding: 6px;
+  text-align: center;
+  border: 1px solid var(--border-soft);
+}
+
+tr:nth-child(even) td {
+  background: #f9fbff;
+}
+
+/* ================= SIGNATURES ================= */
+.signatures {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.sign {
+  width: 45%;
+  text-align: center;
+}
+
+.signature-img {
+  width: 80px;
+  margin-bottom: 5px;
+}
+
+.signature-title {
+  border-top: 2px solid var(--primary);
+  padding-top: 5px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* ================= PRINT ================= */
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+  }
+
+  @page {
+    size: A4;
+    margin: 0.7cm;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<div class="header">
+  <div class="header-left">
+    <img src="assets/images/auth/Damotak Logo.png" alt="Damotak Logo">
+  </div>
+
+  <div class="header-right">
+    <h2>First Point Academy</h2>
+    <p>ODO-EJA, MALLAM-TOPE, OSOGBO, OSUN STATE</p>
+    <p>Email: ipoint619@gmail.com</p>
+    <p>Tel: 08036972619, 0703233082</p>
+  </div>
+</div>
+
+<div class="session-bar">
+  Academic Session: <strong>${sessionYear}</strong>
+</div>
+
+<!-- ================= STUDENT + ATTENDANCE ================= -->
+<div class="info-boxes">
+  <div class="section">
+    <div class="section-title">Student Information</div>
+    <div class="section-content info-grid">
+      <div><strong>Name:</strong> ${studentName}</div>
+      <div><strong>Gender:</strong> ${studentGender}</div>
+      <div><strong>Class:</strong> ${studentClass}</div>
+      <div><strong>Term:</strong> ${term}</div>
+      <div><strong>Student ID:</strong> ${studentID}</div>
+      <div><strong>Date Issued:</strong> ${dateIssued}</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Attendance & Physical Record</div>
+    <div class="section-content info-grid">
+      <div><strong>Days Opened:</strong> ${daysOpened}</div>
+      <div><strong>Days Present:</strong> ${daysPresent}</div>
+      <div><strong>Days Absent:</strong> ${daysAbsent}</div>
+      <div><strong>Height:</strong> ${studentHeight} cm</div>
+      <div><strong>Weight:</strong> ${studentWeight} kg</div>
+      <div><strong>Next Term Begins:</strong> ${nextTermDate}</div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= SUBJECT RESULTS ================= -->
+<div class="section">
+  <div class="section-title">Subjects and Scores</div>
+  <div class="section-content">
+    ${resultTable.outerHTML}
+  </div>
+</div>
+
+<div class="row">
+<div class="col">
+<h4>Summary</h4>
+<ul>
+<li><strong>Total Marks:</strong> ${totalScoreValue}</li>
+<li><strong>Average Score:</strong> ${avgScore}%</li>
+</ul>
+</div>
+<div class="col">
+<h4>Promotion Status</h4>
+<ul>
+<li><strong>Promotion Status:</strong> ${promotionStatus}</li>
+</ul>
+</div>
+</div>
+
+<!-- ================= SIGNATURES ================= -->
+<div class="signatures">
+  <div class="sign">
+    <img id="classTeacherSignatureImg" class="signature-img">
+    <div class="signature-title">Class Teacher’s Signature</div>
+  </div>
+
+  <div class="sign">
+    <img id="proprietorSignatureImg" class="signature-img">
+    <div class="signature-title">Proprietor’s Signature</div>
+  </div>
+</div>
+
+</body>
+</html>

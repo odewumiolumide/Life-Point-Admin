@@ -1201,7 +1201,7 @@ tr:nth-child(even) td {
   </div>
 
   <div class="header-right">
-    <h2>First Point Academy</h2>
+    <h2>Life Point Academy</h2>
     <p>ODO-EJA, MALLAM-TOPE, OSOGBO, OSUN STATE</p>
     <p>Email: ipoint619@gmail.com</p>
     <p>Tel: 08036972619, 0703233082</p>
@@ -1419,125 +1419,262 @@ document.getElementById("printButton").addEventListener("click", () => {
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Student Result | Damotak International School</title>
+<title>Life Point Academy | Student Result</title>
+
 <style>
-body { font-family: "Segoe UI", "Calibri", sans-serif; margin: 30px; line-height: 1.6; color: #2c3e50; position: relative; background: #f7f9fc; }
-body::before { content: ""; position: fixed; top:50%; left:50%; width:750px; height:750px; background: url('assets/images/auth/Damotak Logo.png') no-repeat center center; background-size:60%; opacity:0.05; transform: translate(-50%, -50%); z-index:-1; }
-.school-logo { border: 3px solid #0047AB; border-radius: 12px; padding: 5px; width: 150px; height:auto; display:block; margin:20px auto; box-shadow:0 4px 8px rgba(0,0,0,0.2); }
-.header { text-align:center; margin-bottom:35px; position:relative; }
-.header h3 { margin:5px 0; color:#1c3d72; text-transform:uppercase; letter-spacing:1px; }
-.header p { margin:2px 0; font-size:13px; }
-.header::after { content:""; position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:80%; height:3px; background: linear-gradient(to right, #1c3d72, #2a4d69); border-radius:5px; }
-.col h4, .col ul { text-transform: uppercase; }
-.row { display:flex; gap:20px; flex-wrap:wrap; margin-bottom:25px; }
-.col { flex:1; min-width:250px; background:#fff; border-radius:10px; box-shadow:0 2px 5px rgba(0,0,0,0.07); padding:15px 20px; }
-.col h4 { margin-bottom:8px; font-size:14px; text-transform:uppercase; color:#fff; background:#1c3d72; padding:5px 10px; border-radius:5px 5px 0 0; }
-.col ul { list-style:none; padding:10px 0 0 0; margin:0; }
-.col ul li { margin:4px 0; font-size:13px; }
-.col ul li strong { color:#1c3d72; }
-table { width:100%; border-collapse:collapse; margin-bottom:25px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 2px 5px rgba(0,0,0,0.05); }
-th { background:#1c3d72; color:#fff; padding:6px; font-size:13px; text-align:center; }
-td { text-align:center; padding:6px; border-bottom:1px solid #eef2f7; font-size:13px; }
-tr:nth-child(even) td { background:#f9fbff; }
-.section-title { font-weight:700; margin:25px 0 10px 0; font-size:16px; color:#1c3d72; text-transform:uppercase; letter-spacing:0.5px; border-left:5px solid #1c3d72; padding-left:10px; }
-.signatures { display:flex; justify-content:space-between; margin-top:40px; }
-.sign { border-top:2px solid #1c3d72; width:45%; text-align:center; padding-top:8px; font-size:13px; color:#1c3d72; font-weight:600; }
-@media print { body { background:#fff; -webkit-print-color-adjust: exact; } @page { size:A4; margin:1cm; } }
- .signatures {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
+:root {
+  --primary: #b11226;
+  --secondary: #222;
+  --border-soft: #ddd;
+  --light-bg: #fafafa;
+}
+
+/* ================= GLOBAL ================= */
+body {
+  font-family: "Segoe UI", Calibri, sans-serif;
+  margin: 18px;
+  color: var(--secondary);
+  background: #fff;
+  line-height: 1.4;
+}
+
+/* Watermark */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("assets/images/auth/First Point Logo.webp") no-repeat center;
+  background-size: 28%;
+  opacity: 0.04;
+  z-index: -1;
+}
+
+/* ================= HEADER ================= */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid var(--primary);
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.header-left img {
+  width: 110px;
+  border: 2px solid var(--primary);
+  border-radius: 6px;
+  padding: 4px;
+}
+
+.header-right {
+  text-align: right;
+}
+
+.header-right h2 {
+  margin: 0;
+  font-size: 24px;
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.header-right p {
+  margin: 2px 0;
+  font-size: 12px;
+}
+
+/* ================= SESSION BAR ================= */
+.session-bar {
+  margin: 8px 0 15px;
+  padding: 6px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--light-bg);
+  border: 1px solid var(--border-soft);
+}
+
+/* ================= INFO / SUMMARY BOXES ================= */
+.info-boxes {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.section {
+  flex: 1;
+  min-width: 260px;
+  border: 1px solid var(--border-soft);
+  border-radius: 6px;
+  background: #fff;
+}
+
+.section-title {
+  background: var(--primary);
+  color: #fff;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.section-content {
+  padding: 8px 10px;
+  font-size: 12px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+
+.info-grid strong {
+  color: var(--secondary);
+}
+
+/* ================= TABLE ================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+th {
+  background: var(--primary);
+  color: #fff;
+  padding: 6px;
+  border: 1px solid var(--border-soft);
+}
+
+td {
+  padding: 6px;
+  border: 1px solid var(--border-soft);
+  text-align: center;
+}
+
+tr:nth-child(even) td {
+  background: var(--light-bg);
+}
+
+/* ================= SIGNATURES ================= */
+.signatures {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
 }
 
 .sign {
-    text-align: center;
+  width: 45%;
+  text-align: center;
 }
 
 .signature-img {
-    width: 80px;
-    height: auto;
-    display: block;
-    margin: 0 auto 5px auto; /* logo on top, small spacing */
-    opacity: 0.9;
-}
-
-.signature-line {
-    width: 150px;
-    height: 2px;
-    background: #000;
-    margin: 0 auto 5px auto;
+  width: 75px;
+  margin-bottom: 6px;
 }
 
 .signature-title {
-    font-size: 13px;
-    font-weight: bold;
+  border-top: 2px solid var(--primary);
+  padding-top: 5px;
+  font-size: 12px;
+  font-weight: 700;
 }
 
+/* ================= PRINT ================= */
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
 
+  @page {
+    size: A4;
+    margin: 0.7cm;
+  }
+}
 </style>
+
 </head>
+
 <body>
+
+<!-- ================= HEADER ================= -->
 <div class="header">
-<img src="assets/images/auth/Damotak Logo.png" alt="School Logo" class="school-logo">
-<h3>Damotak International School</h3>
-<p>PRIMARY & JUNIOR SECONDARY : NEW OBA ROAD, ILE-IDANDE AREA, OKE-ONITEA</p>
-<p>JUNIOR SECONDARY & SENIOR SECONDARY : OFF AYEKALE LAROTIMELIHINE,SCHEME. OSOGBO.</p>
-<p>EMAIL: Damotakint@gmail.com </p>
-<p>NUMBERS: 08033880730 | 08082870544 | 08132687701 </p>
-<p><strong>Academic Session:</strong> ${sessionYear}</p>
+  <div class="header-left">
+    <img src="assets/images/auth/First Point Logo.webp" alt="School Logo">
+  </div>
+
+ <div class="header-right">
+    <h2>Life Point Academy | Promotion Result</h2>
+    <p>ODO-EJA, MALLAM-TOPE, OSOGBO, OSUN STATE</p>
+    <p>Email: ipoint619@gmail.com</p>
+    <p>Tel: 08036972619, 0703233082</p>
+  </div>
 </div>
 
-<div class="row">
-<div class="col">
-<h4>Student Details</h4>
-<ul>
-<li><strong>Name:</strong> ${studentName}</li>
-<li><strong>Gender:</strong> ${studentGender}</li>
-<li><strong>Class:</strong> ${studentClass}</li>
-<li><strong>Term:</strong> ${term}</li>
-<li><strong>Student ID:</strong> ${studentID}</li>
-<li><strong>Date Issued:</strong> ${new Date().toLocaleDateString()}</li>
-</ul>
-</div>
+<div class="session-bar">
+  Academic Session: <strong>${sessionYear}</strong>
 </div>
 
-<div class="section-title">Subjects and Scores</div>
-${resultTable.outerHTML}
-
-<div class="row">
-<div class="col">
-<h4>Summary</h4>
-<ul>
-<li><strong>Total Marks:</strong> ${totalScoreValue}</li>
-<li><strong>Average Score:</strong> ${avgScore}%</li>
-</ul>
-</div>
-<div class="col">
-<h4>Promotion Status</h4>
-<ul>
-<li><strong>Promotion Status:</strong> ${promotionStatus}</li>
-</ul>
-</div>
+<!-- ================= STUDENT INFO ================= -->
+<div class="info-boxes">
+  <div class="section">
+    <div class="section-title">Student Information</div>
+    <div class="section-content info-grid">
+      <div><strong>Name:</strong> ${studentName}</div>
+      <div><strong>Gender:</strong> ${studentGender}</div>
+      <div><strong>Class:</strong> ${studentClass}</div>
+      <div><strong>Term:</strong> ${term}</div>
+      <div><strong>Student ID:</strong> ${studentID}</div>
+      <div><strong>Date Issued:</strong> ${new Date().toLocaleDateString()}</div>
+    </div>
+  </div>
 </div>
 
+<!-- ================= RESULTS ================= -->
+<div class="section">
+  <div class="section-title">Subjects and Scores</div>
+  <div class="section-content">
+    ${resultTable.outerHTML}
+  </div>
+</div>
+
+<!-- ================= SUMMARY ================= -->
+<div class="info-boxes">
+  <div class="section">
+    <div class="section-title">Summary</div>
+    <div class="section-content info-grid">
+      <div><strong>Total Marks:</strong> ${totalScoreValue}</div>
+      <div><strong>Average Score:</strong> ${avgScore}%</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Promotion Status</div>
+    <div class="section-content">
+      <strong>${promotionStatus}</strong>
+    </div>
+  </div>
+</div>
+
+<!-- ================= SIGNATURES ================= -->
 <div class="signatures">
+  <div class="sign">
+    <img id="classTeacherSignatureImg" class="signature-img">
+    <div class="signature-title">Class Teacher’s Signature</div>
+  </div>
 
-    <div class="sign">
-        <img id="classTeacherSignatureImg" class="signature-img">
-        <div class="signature-line"></div>
-        <div class="signature-title">Class Teacher’s Signature</div>
-    </div>
-
-    <div class="sign">
-        <img id="proprietorSignatureImg" class="signature-img">
-        <div class="signature-line"></div>
-        <div class="signature-title">Proprietor’s Signature</div>
-    </div>
-
+  <div class="sign">
+    <img id="proprietorSignatureImg" class="signature-img">
+    <div class="signature-title">Proprietor’s Signature</div>
+  </div>
 </div>
 
 </body>
 </html>
+
     `);
     printWindow.document.close();
 
@@ -1552,6 +1689,8 @@ ${resultTable.outerHTML}
         };
     };
 });
+
+
 
 // ---------------------------
 // Load Yearly Summary
