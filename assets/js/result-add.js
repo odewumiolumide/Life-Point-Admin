@@ -382,45 +382,39 @@ const defaultSubjects = {
   ],
 
   jss1: [
-    "Mathematics", "English",
+    "English", "Mathematics",
     "Physical and Health Education (PHE)",
     "Business studies (BS)", "Social and citizenship studies",
     "Basic Science and Technology (BST)", "Christian Religion Studies (CRS)",
-    "Cultural and creative Art (CCA)", "Nigeria History",
-    "Diction", "Digital Technology", "Dictation", "Yoruba"
+    "Cultural and creative Art (CCA)", "Nigeria History","Digital Technology", "Intermediate Science", "French"
   ],
 
   jss2: [
-    "Mathematics", "English",
-    "Pre- vocational studies (PVS)",
-    "Business studies (BS)", "National Value Education (NVE)",
+    "English", "Mathematics",
+    "Physical and Health Education (PHE)",
+    "Business studies (BS)", "Social and citizenship studies",
     "Basic Science and Technology (BST)", "Christian Religion Studies (CRS)",
-    "Cultural and creative Art (CCA)", "Nigeria History",
-    "Diction", "Information and Communication Technology (ICT)",
-    "Dictation", "Yoruba"
+    "Cultural and creative Art (CCA)", "Nigeria History", "Digital Technology", "Intermediate Science", "French"
   ],
 
   jss3: [
-    "Mathematics", "English",
-    "Pre- vocational studies (PVS)",
-    "Business studies (BS)", "National Value Education (NVE)",
+    "English", "Mathematics",
+    "Physical and Health Education (PHE)",
+    "Business studies (BS)", "Social and citizenship studies",
     "Basic Science and Technology (BST)", "Christian Religion Studies (CRS)",
-    "Cultural and creative Art (CCA)", "Nigeria History",
-    "Diction", "Information and Communication Technology (ICT)",
-    "Dictation", "Yoruba"
+    "Cultural and creative Art (CCA)", "Nigeria History", "Digital Technology", "Intermediate Science", "French"
   ],
 
   sss1: [
-    "Mathematics", "English", "Citizenship & Heritage Studies (CHS)",
-    "Economics", "Digital Technology", "Phonics"
+    "General Mathematics", "English Language", "Citizenship and Heritage Studies", "Digital Technology"
   ],
 
   sss2: [
-    "Mathematics", "English", "Civic- Education", "ICT", "Phonics"
+    "General Mathematics", "English Language", "Citizenship and Heritage Studies", "Digital Technology"
   ],
 
   sss3: [
-    "Mathematics", "English", "Civic- Education", "ICT", "Phonics"
+  "General Mathematics", "English Language", "Citizenship and Heritage Studies", "Digital Technology"
   ]
 };
 
@@ -431,17 +425,86 @@ const defaultSubjects = {
 loadStudent();
 
 
-// ---------------------------
-// Add Subject Row
-// ---------------------------
-function addSubjectRow(subject = "", ca1 = "", ca2 = "", exam = "", total = "0", grade = "-", remark = "-", readOnly = false) {
-  const row = document.createElement("tr");
+// ======================================================
+// ALL SUBJECTS COMBINED (for new subject dropdowns)
+// ======================================================
+const subjects = [
+  "Solar", "Fashion", "Livestock", "Beauty", "Horticulture", "Computer Hardware",
+  "Biology", "Chemistry", "Physics", "Agricultural Science", "Further Mathematics", "Geography",
+  "Literature in English", "Yoruba", "Government", "Christian Religious Studies",
+  "Finance & Accounting", "Marketing", "Commerce", "Economics"
+];
 
-  if (isSS3) {
-    // SS3 — Exam Only
+// ======================================================
+// SUBJECT GROUP FILTERS (ADDED)
+// ======================================================
+const subjectGroups = {
+
+  "Trade Subjects": [
+    "Solar",
+    "Fashion",
+    "Livestock",
+    "Beauty",
+    "Computer Hardware",
+    "Horticulture"
+  ],
+  "Science": [
+    "Biology",
+    "Chemistry",
+    "Physics",
+    "Geography",
+    "Foods & Nutrition",
+    "Agricultural Science",
+    "Further Mathematics",
+    "Technical Drawing"
+
+  ],
+  "Humanities": [
+    "Government",
+    "Visual Arts",
+    "Catering Craft",
+    "Nigerian History",
+    "Literature-in-English",
+    "Christian Religious studies"
+    
+  ],
+  "Business": [
+    "Accounting",
+    "Commerce",
+    "Economics",
+    "Marketing"
+    
+  ],
+  //"Other Subjects": subjects
+};
+
+// ======================================================
+// ADD SUBJECT ROW FUNCTION
+// ======================================================
+function addSubjectRow(subject = "", ca1 = "", ca2 = "", exam = "", total = "0", grade = "-", remark = "-", readOnly = false, isNew = true, studentClass = "") {
+  const row = document.createElement("tr");
+  const showCA = !isSS3 || currentTerm === "First Term";
+
+  const useDropdown = isNew && ["jss 1", "jss 2", "jss 3", "sss 1", "sss 2", "sss 3"].includes(studentClass.toLowerCase());
+
+  const subjectHTML = useDropdown
+    ? `<select class="form-control subject-input" ${readOnly ? "disabled" : ""}>
+        <option value="">Select Subject</option>
+        ${Object.entries(subjectGroups).map(([group, subs]) => `
+          <optgroup label="${group}">
+            ${subs.map(sub => `
+              <option value="${sub}" ${sub === subject ? "selected" : ""}>${sub}</option>
+            `).join("")}
+          </optgroup>
+        `).join("")}
+       </select>`
+    : `<input type="text" class="form-control subject-input" value="${subject}" ${readOnly ? "readonly" : ""}>`;
+
+  if (!showCA) {
+    // For SS3 Second/Third Term → Exam only
     row.innerHTML = `
       <td class="sl">${tbody.children.length + 1}</td>
-      <td><input type="text" class="form-control subject-input" value="${subject}" ${readOnly ? "readonly" : ""}></td>
+      <td>${subjectHTML}</td>
       <td colspan="3" class="text-center text-danger fw-bold">NO C.A IN SS3</td>
       <td><input type="number" class="form-control mark-exam" value="100" readonly></td>
       <td><input type="number" class="form-control exam-input" value="${exam}" min="0" max="100" ${readOnly ? "readonly" : ""}></td>
@@ -451,23 +514,18 @@ function addSubjectRow(subject = "", ca1 = "", ca2 = "", exam = "", total = "0",
       <td class="text-center">${readOnly ? "" : '<button class="btn btn-danger btn-sm remove-row">✕</button>'}</td>
     `;
   } else {
-    // NORMAL CLASSES — CA1 = 15, CA2 = 15
+    // Normal classes or SS3 First Term → show CA
     row.innerHTML = `
       <td class="sl">${tbody.children.length + 1}</td>
-      <td><input type="text" class="form-control subject-input" value="${subject}" ${readOnly ? "readonly" : ""}></td>
-
-      <td><input type="number" class="form-control mark-ca" value="30" readonly></td>
-
-      <td><input type="number" class="form-control ca-input" value="${ca1}" min="0" max="15" ${readOnly ? "readonly" : ""}></td>
-      <td><input type="number" class="form-control ca-input" value="${ca2}" min="0" max="15" ${readOnly ? "readonly" : ""}></td>
-
-      <td><input type="number" class="form-control mark-exam" value="70" readonly></td>
-      <td><input type="number" class="form-control exam-input" value="${exam}" min="0" max="70" ${readOnly ? "readonly" : ""}></td>
-
+      <td>${subjectHTML}</td>
+      <td><input type="number" class="form-control mark-ca" value="40" readonly></td>
+      <td><input type="number" class="form-control ca-input" value="${ca1}" min="0" max="20" ${readOnly ? "readonly" : ""}></td>
+      <td><input type="number" class="form-control ca-input" value="${ca2}" min="0" max="20" ${readOnly ? "readonly" : ""}></td>
+      <td><input type="number" class="form-control mark-exam" value="60" readonly></td>
+      <td><input type="number" class="form-control exam-input" value="${exam}" min="0" max="60" ${readOnly ? "readonly" : ""}></td>
       <td class="total-score">${total}</td>
       <td class="grade">${grade}</td>
       <td class="remark">${remark}</td>
-
       <td class="text-center">${readOnly ? "" : '<button class="btn btn-danger btn-sm remove-row">✕</button>'}</td>
     `;
   }
@@ -476,17 +534,23 @@ function addSubjectRow(subject = "", ca1 = "", ca2 = "", exam = "", total = "0",
   refreshRowNumbers();
 }
 
-// ---------------------------
+// ======================================================
+// REFRESH ROW NUMBERS
+// ======================================================
 function refreshRowNumbers() {
   Array.from(tbody.children).forEach((tr, i) =>
     tr.querySelector(".sl").textContent = i + 1
   );
 }
 
-// ---------------------------
-// Add / Remove Rows
-// ---------------------------
-document.getElementById("addRow").addEventListener("click", () => addSubjectRow());
+// ======================================================
+// ADD / REMOVE ROWS HANDLERS
+// ======================================================
+document.getElementById("addRow").addEventListener("click", () => {
+  const studentClass = document.getElementById("studentClass").textContent || "";
+  addSubjectRow("", "", "", "", "0", "-", "-", false, true, studentClass);
+});
+
 tbody.addEventListener("click", (e) => {
   if (e.target.classList.contains("remove-row")) {
     e.target.closest("tr").remove();
@@ -516,8 +580,8 @@ tbody.addEventListener("input", (e) => {
   let ca1 = parseInt(caInputs[0].value) || 0;
   let ca2 = parseInt(caInputs[1].value) || 0;
 
-  if (ca1 > 15) { alert("CA1 cannot exceed 15"); ca1 = caInputs[0].value = 0; }
-  if (ca2 > 15) { alert("CA2 cannot exceed 15"); ca2 = caInputs[1].value = 0; }
+  if (ca1 > 20) { alert("CA1 cannot exceed 20"); ca1 = caInputs[0].value = 0; }
+  if (ca2 > 20) { alert("CA2 cannot exceed 20"); ca2 = caInputs[1].value = 0; }
 
   // *** NEW CA LOGIC ***
   const caFinal = (ca1 + ca2);  // average of CA1 and CA2
@@ -538,8 +602,8 @@ tbody.addEventListener("input", (e) => {
   if (!tr) return;
 
   if (e.target.classList.contains("exam-input")) {
-    if (parseInt(e.target.value) > 70) {
-      alert("Exam cannot exceed 70");
+    if (parseInt(e.target.value) > 60) {
+      alert("Exam cannot exceed 60");
       e.target.value = 0;
     }
   }
@@ -547,32 +611,35 @@ tbody.addEventListener("input", (e) => {
 
 
 // ---------------------------
-// Grade Logic
+// Grade Logic (CA 40 + Exam 60 = 100)
 // ---------------------------
 function updateGrade(tr, total) {
   let grade = "-", remark = "-";
 
-  if (total >= 63) {            // 90–100%
+  if (total >= 70) {
     grade = "A";
     remark = "Excellent";
   } 
-  else if (total >= 56) {       // 80–89%
+  else if (total >= 60) {
     grade = "B";
     remark = "Very Good";
   } 
-  else if (total >= 42) {       // 60–79%
+  else if (total >= 50) {
     grade = "C";
     remark = "Good";
   } 
-  else if (total >= 28) {       // 40–59%
+  else if (total >= 45) {
     grade = "D";
     remark = "Average";
   } 
-  else {
+  else if (total >= 40) {
     grade = "E";
-    remark = "Needs Improvement";
+    remark = "Pass";
   }
-
+  else {
+    grade = "F";
+    remark = "Fail";
+  }
 
   tr.querySelector(".grade").textContent = grade;
   tr.querySelector(".remark").textContent = remark;
@@ -938,16 +1005,24 @@ const totals = Array.from(resultTable.querySelectorAll(".total-score")).map(td =
 const totalScore = totals.reduce((a, b) => a + b, 0);
 const avgScore = totals.length ? (totalScore / totals.length).toFixed(2) : "0.00";
 
+
+// -----------------------------
 // -----------------------------
 // Set Head Teacher Remark dynamically
 // -----------------------------
 let headRemarkAuto = "-";
 
-if (avgScore >= 75) headRemarkAuto = "Outstanding achievement! Keep up the excellent work and continue striving for success.";
-else if (avgScore >= 60) headRemarkAuto = "Very good performance. Well done! Maintain this effort to reach higher goals.";
-else if (avgScore >= 50) headRemarkAuto = "Good performance. Keep working consistently to improve further.";
-else if (avgScore >= 40) headRemarkAuto = "Satisfactory performance. There is room for improvement with more focus and effort.";
-else headRemarkAuto = "Performance needs attention. Extra effort and dedication are recommended to improve in the next term.";
+if (avgScore >= 75)
+  headRemarkAuto = "Excellent performance. You have shown strong understanding and commitment. Keep up the good work.";
+else if (avgScore >= 60)
+  headRemarkAuto = "Very good result. Your effort is commendable. Continue working hard to achieve more.";
+else if (avgScore >= 50)
+  headRemarkAuto = "Good performance. With steady effort and focus, better results can be achieved.";
+else if (avgScore >= 40)
+  headRemarkAuto = "Fair performance. More attention and consistent study are needed for improvement.";
+else
+  headRemarkAuto = "Unsatisfactory performance. Greater effort, regular practice, and guidance are required to improve next term.";
+
 
 
 // Update the readonly textarea in your HTML

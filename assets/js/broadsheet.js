@@ -64,9 +64,9 @@ const defaultSubjects = {
   jss1: ["Mathematics","English","Physical and Health Education (PHE)","Business studies (BS)","Social and citizenship studies","Basic Science and Technology (BST)","Christian Religion Studies (CRS)","Cultural and creative Art (CCA)","Nigeria History","Diction","Digital Technology","Dictation","Yoruba"],
   jss2: ["Mathematics","English","Pre- vocational studies (PVS)","Business studies (BS)","National Value Education (NVE)","Basic Science and Technology (BST)","Christian Religion Studies (CRS)","Cultural and creative Art (CCA)","Nigeria History","Diction","Information and Communication Technology (ICT)","Dictation","Yoruba"],
   jss3: ["Mathematics","English","Pre- vocational studies (PVS)","Business studies (BS)","National Value Education (NVE)","Basic Science and Technology (BST)","Christian Religion Studies (CRS)","Cultural and creative Art (CCA)","Nigeria History","Diction","Information and Communication Technology (ICT)","Dictation","Yoruba"],
-  sss1: ["Mathematics","English","Citizenship & Heritage Studies (CHS)","Economics","Digital Technology","Phonics"],
-  sss2: ["Mathematics","English","Civic- Education","ICT","Phonics"],
-  sss3: ["Mathematics","English","Civic- Education","ICT","Phonics"]
+  sss1: ["General Mathematics", "English Language","Citizenship and Heritage Studies", "Digital Technology"],
+  sss2: ["General Mathematics", "English Language","Citizenship and Heritage Studies", "Digital Technology"],
+  sss3: ["General Mathematics", "English Language","Citizenship and Heritage Studies", "Digital Technology"]
 };
 
 // -----------------------------
