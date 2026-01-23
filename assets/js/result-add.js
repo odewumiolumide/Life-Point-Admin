@@ -1322,6 +1322,42 @@ tr:nth-child(even) td {
   </div>
 </div>
 
+<!-- ================= TOTAL AVERAGE & REMARKS ================= -->
+<div class="side-boxes">
+
+  <!-- LEFT: TOTAL AVERAGE SCORE -->
+  <div class="section">
+    <div class="section-title">Total Average Score</div>
+    <div class="section-content">
+      <ul style="list-style: none; padding: 0; margin: 0; font-size: 12px;">
+        <li><strong>Total Marks:</strong> ${totalScore}</li>
+        <br>
+        <li><strong>Average Percentage:</strong> ${avgScore}%</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- RIGHT: REMARKS -->
+  <div class="section">
+    <div class="section-title">Remarks</div>
+    <div class="section-content">
+      <ul style="list-style: none; padding: 0; margin: 0; font-size: 12px;">
+        <li>
+          <strong>Class Teacher:</strong>
+          ${classRemark}
+        </li>
+        <br>
+        <li>
+          <strong>Headmaster:</strong>
+          ${headRemarkAuto}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+
 <!-- ================= GRADING SYSTEM AND PSYCHOMOTOR SIDE BY SIDE ================= -->
 <div class="side-boxes">
   <div class="section">
