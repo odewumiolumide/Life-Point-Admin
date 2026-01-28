@@ -1752,6 +1752,7 @@ tr:nth-child(even) td {
   </div>
 </div>
 
+<br>
 <!-- ================= SUMMARY ================= -->
 <div class="info-boxes">
   <div class="section">

@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Life Point Academy | Admin Dashboard </title>
- <link rel="icon" type="image/png" href="assets/images/auth/First Point Logo.webp">
+  <link rel="icon" type="image/png" href="assets/images/auth/First Point Logo.webp">
   <!-- remix icon font css  -->
   <link rel="stylesheet" href="assets/css/remixicon.css">
   <!-- BootStrap css -->
@@ -40,6 +40,24 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
+<style>
+  .option-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.question-card {
+  border: 1px dashed #d0d5ff;
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background: #fafbff;
+}
+
+.question-card { background: #fff; }
+
+</style>
 <body>
 
   <!-- Theme Customization Structure Start -->
@@ -433,7 +451,7 @@
     
     <div class="dashboard-main-body">
         <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-24">
-  <h6 class="fw-semibold mb-0">Registered Students</h6>
+  <h6 class="fw-semibold mb-0">Set New Questions for Exam</h6>
   <ul class="d-flex align-items-center gap-2">
     <li class="fw-medium">
       <a href="admin-dashboard.html" class="d-flex align-items-center gap-1 hover-text-primary">
@@ -442,7 +460,7 @@
       </a>
     </li>
     <li>-</li>
-    <li class="fw-medium">Registered Students</li>
+    <li class="fw-medium">Create New  CBT Exam</li>
   </ul>
 </div>
 
@@ -452,73 +470,40 @@
       <div class="col-xxl-6 col-xl-8 col-lg-10">
         <div class="card border">
           <div class="card-body">
-            <h6 class="text-md text-primary-light mb-16">Add Student</h6>
 
-            <!-- ✅ Add Student Form -->
-            <form id="studentForm">
-              <div class="mb-20">
-                <label for="studentName" class="form-label fw-semibold text-primary-light text-sm mb-8">
-                  Full Name <span class="text-danger-600">*</span>
-                </label>
-                <input
-                  type="text"
-                  class="form-control radius-8"
-                  id="studentName"
-                  placeholder="Enter full name"
-                  required
-                />
-              </div>
+            <!-- ================= SUCCESS MESSAGE ================= -->
+<div id="successMsg" class="alert alert-success d-none mb-20">
+  Action completed successfully
+</div>
 
-              <div class="mb-20">
-                <label for="studentPhone" class="form-label fw-semibold text-primary-light text-sm mb-8">
-                  Phone
-                </label>
-                <input
-                  type="tel"
-                  class="form-control radius-8"
-                  id="studentPhone"
-                  placeholder="Enter phone number"
-                />
-              </div>
+           <h6 class="text-md text-primary-light mb-16">SET PARAMETERS FOR YOUR EXAM</h6>
 
-              <div class="mb-20">
-                <label for="studentYear" class="form-label fw-semibold text-primary-light text-sm mb-8">
-                  Year
-                </label>
-                <input
-                  type="date"
-                  class="form-control radius-8"
-                  id="studentYear"
-                  placeholder="Enter year"
-                />
-              </div>
+<!-- ================= SET TEST PARAMETERS ================= -->
+<form id="testForm">
 
-              <div class="mb-20">
-                <label for="studentGender" class="form-label fw-semibold text-primary-light text-sm mb-8">
-                  Gender <span class="text-danger-600">*</span>
-                </label>
-                <select
-                  class="form-control radius-8 form-select"
-                  id="studentGender"
-                  required
-                >
-                  <option value="">Select Gender</option>
-                  <option>Male</option>
-                  <option>Female</option>
-                </select>
-              </div>
+  <!-- Test Title -->
+  <div class="mb-20">
+    <label class="form-label fw-semibold text-primary-light text-sm mb-8">
+      Exam Title <span class="text-danger-600">*</span>
+    </label>
+    <input
+      type="text"
+      class="form-control radius-8"
+      id="testTitle"
+      placeholder="Enter Exam Title"
+      required
+    />
+  </div>
 
-              <div class="mb-20">
-                <label for="studentClass" class="form-label fw-semibold text-primary-light text-sm mb-8">
-                  Class <span class="text-danger-600">*</span>
-                </label>
-                <select
-                  class="form-control radius-8 form-select"
-                  id="studentClass"
-                  required
-                >
-                  <option value="">Select Class</option>
-                  <option>Pre Nusery</option>
+  <!-- Class & Duration -->
+  <div class="row">
+    <div class="col-md-6 mb-20">
+      <label class="form-label fw-semibold text-primary-light text-sm mb-8">
+        Class <span class="text-danger-600">*</span>
+      </label>
+      <select class="form-control radius-8 form-select" id="testClass" required>
+        <option value="">Select Class</option>
+       <option>Pre Nusery</option>
                   <option>Nusery 1</option>
                   <option>Nusery 2</option>
                   <option>Prep-Grade</option>
@@ -533,82 +518,171 @@
                   <option>SSS 1</option>
                   <option>SSS 2</option>
                   <option>SSS 3</option>
-                </select>
-              </div>
+      </select>
+    </div>
 
-              <div class="mb-20">
-                <label for="studentTerm" class="form-label fw-semibold text-primary-light text-sm mb-8">
-                  Term <span class="text-danger-600">*</span>
-                </label>
-                <select
-                  class="form-control radius-8 form-select"
-                  id="studentTerm"
-                  required
-                >
-                  <option value="">Select Term</option>
-                  <option>First Term</option>
-                  <option>Second Term</option>
-                  <option>Third Term</option>
-                </select>
-              </div>
+    <div class="col-md-6 mb-20">
+      <label class="form-label fw-semibold text-primary-light text-sm mb-8">
+        Duration (Minutes)
+      </label>
+      <input
+        type="number"
+        class="form-control radius-8"
+        id="testDuration"
+        placeholder="e.g 40"
+        required
+      />
+    </div>
+  </div>
 
-              <div class="d-flex align-items-center justify-content-center gap-3">
-                <button
-                  type="reset"
-                  class="border border-danger-600 bg-hover-danger-200 text-danger-600 text-md px-56 py-11 radius-8"
-                >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  class="btn btn-primary border border-primary-600 text-md px-56 py-12 radius-8"
-                >
-                  Save
-                </button>
-              </div>
-            </form>
-            <!-- ✅ End Student Form -->
-          </div>
+<div class="mb-3">
+  <label class="form-label">Subject *</label>
+  <select class="form-select" id="testSubject" required>
+    <option value="">Select Subject</option>
+    <option>General Mathematics</option>
+    <option>English Language</option>
+    <option>Citizenship and Heritage Studies</option>
+    <option>Digital Technology</option>
+    <option>Solar</option>
+    <option>Fashion</option>
+     <option>Livestock</option>
+      <option>Beauty</option>
+       <option>Horticulture</option>
+        <option>Computer Hardware</option>
+        <option>Biology</option>
+        <option>Computer Hardware</option>
+        <option>Chemistry</option>
+        <option>Physics</option>
+        <option>Agricultural Science</option>
+        <option>Further Mathematics</option>
+        <option>Geography</option>
+        <option>Finance & Accounting</option>
+        <option>Marketing</option>
+        <option>Commerce</option>
+        <option>Economics</option>
+        <option>Business studies (BS)</option>
+
+  </select>
+</div>
+
+
+  <!-- Options -->
+  <div class="row mb-20">
+    <div class="col-md-4">
+      <label class="text-sm fw-semibold">Random Questions</label>
+      <select class="form-control radius-8 form-select" id="randomQuestions">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+    </div>
+
+    <div class="col-md-4">
+      <label class="text-sm fw-semibold">Random Options</label>
+      <select class="form-control radius-8 form-select" id="randomOptions">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+    </div>
+
+    <div class="col-md-4">
+      <label class="text-sm fw-semibold">Show Score After Exam</label>
+      <select class="form-control radius-8 form-select" id="showScore">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Buttons -->
+  <div class="d-flex justify-content-center gap-3">
+    <button type="submit" class="btn btn-primary px-40">
+      SUBMIT EXAM TITLE
+    </button>
+    <button type="button" id="openQuestionForm" class="btn btn-outline-primary px-40" disabled>
+       SET QUESTIONS
+    </button>
+  </div>
+</form>
+
+<!-- ================= SET QUESTIONS ================= -->
+<div id="questionSection" class="mt-40 d-none">
+
+  <h6 class="text-md text-primary-light mb-16">SET QUESTIONS</h6>
+
+  <div class="mb-20">
+    <label class="form-label fw-semibold text-sm mb-8">Select Test</label>
+    <select id="testSelector" class="form-control radius-8 form-select">
+      <option value="">Select Exam Title</option>
+    </select>
+  </div>
+
+  <div id="questionsContainer"></div>
+
+  <div class="text-center mt-20">
+    <button id="addQuestionBtn" class="btn btn-outline-primary px-40">
+       ADD NEW QUESTION
+    </button>
+  </div>
+
+  <div class="text-center mt-20 d-flex justify-content-center gap-3">
+  <button id="saveDraftBtn" class="btn btn-secondary px-30">
+    SAVE AS DRAFT
+  </button>
+
+  <button id="publishTestBtn" class="btn btn-success px-30">
+    PUBLISH TEST
+  </button>
+
+  <button id="archiveTestBtn" class="btn btn-outline-danger px-30">
+    ARCHIVE
+  </button>
+</div>
+
+<!-- STATUS BADGE -->
+<div class="text-center mt-12">
+  <span id="testStatusBadge" class="badge bg-warning">
+    Status: Draft
+  </span>
+</div>
+
+  
+</div>
+
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ✅ Notification Modal -->
-<div
-  class="modal fade"
-  id="notificationModal"
-  tabindex="-1"
-  aria-labelledby="notificationModalLabel"
-  aria-hidden="true"
->
+<!-- Success Modal -->
+<div class="modal fade" id="successModal" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content radius-12">
-      <div class="modal-header">
-        <h5 class="modal-title" id="notificationModalLabel">Notification</h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="modal-body text-center">
-        <p id="notificationMessage" class="text-md"></p>
-      </div>
-      <div class="modal-footer justify-content-center">
-        <button
-          type="button"
-          class="btn btn-primary px-4"
-          data-bs-dismiss="modal"
-        >
-          Done
-        </button>
+    <div class="modal-content p-3">
+      <div class="modal-body text-center" id="successModalMsg"></div>
+      <div class="text-center mt-2">
+        <button class="btn btn-primary" data-bs-dismiss="modal">OK</button>
       </div>
     </div>
   </div>
 </div>
+
+<!-- Delete Question Modal -->
+<div class="modal fade" id="deleteQuestionModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content p-3">
+      <div class="modal-body text-center">
+        Are you sure you want to delete this question?
+      </div>
+      <div class="text-center mt-2">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button class="btn btn-danger" id="confirmDeleteQuestionBtn">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
 
 
@@ -666,11 +740,14 @@
     // ================== Image Upload Js End ===========================
 </script>
 
-<!-- ✅ JS File -->
-<script type="module" src="assets/js/student.js">
+
 </script>
-<script type="module" src="assets/js/adminauth.js"></script>
-<script type="module" src="assets/js/login.js"></script>
+
+
+<script type="module" src="assets/js/create-exam.js"></script>
+
+
+
 </body>
 
 </html>
