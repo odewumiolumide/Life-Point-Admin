@@ -6,23 +6,23 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebas
     
     students: {
       config: {
-         apiKey: "AIzaSyBVomKLva7Qw4da7ksHlGQ4AqElxujjC5g",
-  authDomain: "damotak-classes-database.firebaseapp.com",
-  projectId: "damotak-classes-database",
-  storageBucket: "damotak-classes-database.firebasestorage.app",
-  messagingSenderId: "642680259009",
-  appId: "1:642680259009:web:6070722888eac763cfef40"
+        apiKey: "AIzaSyDfsck2-qqK0QJNzUlUqGR3cUQlFgGQnxs",
+  authDomain: "life-point-student-database.firebaseapp.com",
+  projectId: "life-point-student-database",
+  storageBucket: "life-point-student-database.firebasestorage.app",
+  messagingSenderId: "1057001618683",
+  appId: "1:1057001618683:web:4afc757f33b37ba2af045e"
       },
       node: "Students"
     },
     staff: {
       config: {
-          apiKey: "AIzaSyCiy2VaTfnuO7eEPL0_kD_WIHcDMB2T6Xs",
-  authDomain: "damotak-international-da-230d5.firebaseapp.com",
-  projectId: "damotak-international-da-230d5",
-  storageBucket: "damotak-international-da-230d5.firebasestorage.app",
-  messagingSenderId: "947496867501",
-  appId: "1:947496867501:web:36076fcbcaf2c39ca2d824"
+          apiKey: "AIzaSyD7pin-JUBBqUI-KiNtTCyGTSFOHL6rE1U",
+  authDomain: "life-point-staff-database.firebaseapp.com",
+  projectId: "life-point-staff-database",
+  storageBucket: "life-point-staff-database.firebasestorage.app",
+  messagingSenderId: "1056473087719",
+  appId: "1:1056473087719:web:56ff79cdd0c9c46d6bec42"
       },
       node: "Staffs"
     }

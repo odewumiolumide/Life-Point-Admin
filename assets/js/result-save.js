@@ -4,12 +4,12 @@ import { getDatabase, ref, get, update, set } from "https://www.gstatic.com/fire
 
 // 🔥 Firebase Config for Result Database
 const firebaseConfig = {
-  apiKey: "AIzaSyB-Oh8Ux2EGY_fQLzPhnNnXBjsuN8Ojw-8",
-  authDomain: "parakletos-subjects.firebaseapp.com",
-  projectId: "parakletos-subjects",
-  storageBucket: "parakletos-subjects.firebasestorage.app",
-  messagingSenderId: "186963551802",
-  appId: "1:186963551802:web:86ba4e21ffad63d2dcf703"
+ apiKey: "AIzaSyA8KCmHnEYbXhfdx6pL9T9dAXl62zxb6kA",
+  authDomain: "life-point-result-database.firebaseapp.com",
+  projectId: "life-point-result-database",
+  storageBucket: "life-point-result-database.firebasestorage.app",
+  messagingSenderId: "165300965879",
+  appId: "1:165300965879:web:5e9c519c1aadaa112adef2"
 };
 
 // ✅ Initialize Firebase

@@ -7,23 +7,22 @@ import { saveResult } from "./result-save.js";
 // Firebase Configs
 // ---------------------------
 const studentFirebaseConfig = {
-  apiKey: "AIzaSyBVomKLva7Qw4da7ksHlGQ4AqElxujjC5g",
-  authDomain: "damotak-classes-database.firebaseapp.com",
-  projectId: "damotak-classes-database",
-  databaseURL: "https://damotak-classes-database-default-rtdb.firebaseio.com",
-  storageBucket: "damotak-classes-database.firebasestorage.app",
-  messagingSenderId: "642680259009",
-  appId: "1:642680259009:web:6070722888eac763cfef40"
+ apiKey: "AIzaSyDfsck2-qqK0QJNzUlUqGR3cUQlFgGQnxs",
+  authDomain: "life-point-student-database.firebaseapp.com",
+  projectId: "life-point-student-database",
+  storageBucket: "life-point-student-database.firebasestorage.app",
+  messagingSenderId: "1057001618683",
+  appId: "1:1057001618683:web:4afc757f33b37ba2af045e"
 };
 
 
 const resultFirebaseConfig = {
-  apiKey: "AIzaSyB-Oh8Ux2EGY_fQLzPhnNnXBjsuN8Ojw-8",
-  authDomain: "parakletos-subjects.firebaseapp.com",
-  projectId: "parakletos-subjects",
-  storageBucket: "parakletos-subjects.firebasestorage.app",
-  messagingSenderId: "186963551802",
-  appId: "1:186963551802:web:86ba4e21ffad63d2dcf703"
+ apiKey: "AIzaSyA8KCmHnEYbXhfdx6pL9T9dAXl62zxb6kA",
+  authDomain: "life-point-result-database.firebaseapp.com",
+  projectId: "life-point-result-database",
+  storageBucket: "life-point-result-database.firebasestorage.app",
+  messagingSenderId: "165300965879",
+  appId: "1:165300965879:web:5e9c519c1aadaa112adef2"
 };
 
 // ---------------------------

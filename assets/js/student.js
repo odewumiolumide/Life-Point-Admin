@@ -16,13 +16,12 @@ if (studentNameInput) {
 // ✅ Firebase Configuration
 // ===============================
 const firebaseConfig = {
-  apiKey: "AIzaSyBVomKLva7Qw4da7ksHlGQ4AqElxujjC5g",
-  authDomain: "damotak-classes-database.firebaseapp.com",
-  databaseURL: "https://damotak-classes-database-default-rtdb.firebaseio.com",
-  projectId: "damotak-classes-database",
-  storageBucket: "damotak-classes-database.firebasestorage.app",
-  messagingSenderId: "642680259009",
-  appId: "1:642680259009:web:6070722888eac763cfef40"
+  apiKey: "AIzaSyDfsck2-qqK0QJNzUlUqGR3cUQlFgGQnxs",
+  authDomain: "life-point-student-database.firebaseapp.com",
+  projectId: "life-point-student-database",
+  storageBucket: "life-point-student-database.firebasestorage.app",
+  messagingSenderId: "1057001618683",
+  appId: "1:1057001618683:web:4afc757f33b37ba2af045e"
 };
 
 const app = initializeApp(firebaseConfig);

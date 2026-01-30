@@ -9,13 +9,12 @@ import {
 
 // ================= FIREBASE CONFIG =================
 const firebaseConfig = {
-  apiKey: "AIzaSyCiy2VaTfnuO7eEPL0_kD_WIHcDMB2T6Xs",
-  authDomain: "damotak-international-da-230d5.firebaseapp.com",
-  databaseURL: "https://damotak-international-da-230d5-default-rtdb.firebaseio.com",
-  projectId: "damotak-international-da-230d5",
-  storageBucket: "damotak-international-da-230d5.firebasestorage.app",
-  messagingSenderId: "947496867501",
-  appId: "1:947496867501:web:58ec74b6fa92d61ea2d824"
+  apiKey: "AIzaSyD7pin-JUBBqUI-KiNtTCyGTSFOHL6rE1U",
+  authDomain: "life-point-staff-database.firebaseapp.com",
+  projectId: "life-point-staff-database",
+  storageBucket: "life-point-staff-database.firebasestorage.app",
+  messagingSenderId: "1056473087719",
+  appId: "1:1056473087719:web:56ff79cdd0c9c46d6bec42"
 };
 
 // ================= INITIALIZE =================
