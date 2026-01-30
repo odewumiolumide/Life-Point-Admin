@@ -1279,10 +1279,10 @@ tr:nth-child(even) td {
   </div>
 
   <div class="header-right">
-    <h2>Life Point Academy</h2>
+    <h2>LIFE POINT ACADEMY| TERM RESULT</h2>
     <p>ODO-EJA, MALLAM-TOPE, OSOGBO, OSUN STATE</p>
-    <p>Email: ipoint619@gmail.com</p>
-    <p>Tel: 08036972619, 0703233082</p>
+    <p>Email: Tpoint619@gmail.com</p>
+    <p>Tel: 08036972619, 07032733082</p>
   </div>
 </div>
 
@@ -1808,10 +1808,10 @@ tr:nth-child(even) td {
   </div>
 
  <div class="header-right">
-    <h2>Life Point Academy | Promotion Result</h2>
+    <h2>LIFE POINT ACADEMY| PROMOTION RESULT</h2>
     <p>ODO-EJA, MALLAM-TOPE, OSOGBO, OSUN STATE</p>
-    <p>Email: ipoint619@gmail.com</p>
-    <p>Tel: 08036972619, 0703233082</p>
+    <p>Email: Tpoint619@gmail.com</p>
+    <p>Tel: 08036972619, 07032733082</p>
   </div>
 </div>
 
@@ -1954,7 +1954,7 @@ async function loadYearlySummary() {
     if (overallAverage >= 80) promotionStatus = "Promoted to the Next Class with Distinction";
     else if (overallAverage >= 50) promotionStatus = "Promoted to the Next Class";
     else if (overallAverage >= 40) promotionStatus = "Promotion on Trial";
-    else promotionStatus = "Need Acadmic Support";
+    else promotionStatus = "Need Academic Support";
 
     totalScoreValue = totalScore;
     avgScore = overallAverage;

@@ -35,11 +35,6 @@ const PROTECTED_PAGES = [
   "exam-page.html",
   "tab;e-exam.html"
 
-
-
-
-
-
 ];
 
 // ================= CURRENT PAGE =================
