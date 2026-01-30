@@ -17,7 +17,7 @@ const studentFirebaseConfig = {
 
 
 const resultFirebaseConfig = {
- apiKey: "AIzaSyA8KCmHnEYbXhfdx6pL9T9dAXl62zxb6kA",
+  apiKey: "AIzaSyA8KCmHnEYbXhfdx6pL9T9dAXl62zxb6kA",
   authDomain: "life-point-result-database.firebaseapp.com",
   projectId: "life-point-result-database",
   storageBucket: "life-point-result-database.firebasestorage.app",
