@@ -28,7 +28,18 @@ const PROTECTED_PAGES = [
   "staff-role.html",
   "student-add.html",
   "student-list.html",
-  "view-profile.html"
+  "view-profile.html",
+  "exam-login.html",
+  "exam-content.html",
+  "create-exam.html",
+  "exam-page.html",
+  "tab;e-exam.html"
+
+
+
+
+
+
 ];
 
 // ================= CURRENT PAGE =================

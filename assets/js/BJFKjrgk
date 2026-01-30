@@ -5916,5 +5916,141 @@ button:hover{
 </html>
 ] for it but dfiifrnet js tat work for it  
 
+/one of the new features of the system/</link>
+
 
 I NOTICED THAT THE EXAM SCORE MARK IS THAT IS GIVING IS WRONG THE JUST DID NAH EXAM AND I GOT JUST 1 ASNWER AND YET YOU SAID 3/3  NETA DOF 1/3 FIX THAT 
+
+
+// ======================================================
+// ALL SUBJECTS COMBINED (for new subject dropdowns)
+// ======================================================
+const subjects = [
+  "Solar", "Fashion", "Livestock", "Beauty", "Horticulture", "Computer Hardware",
+  "Biology", "Chemistry", "Physics", "Agricultural Science", "Further Mathematics", "Geography",
+  "Literature in English", "Yoruba", "Government", "Christian Religious Studies",
+  "Finance & Accounting", "Marketing", "Commerce", "Economics"
+];
+
+// ======================================================
+// SUBJECT GROUP FILTERS (ADDED)
+// ======================================================
+const subjectGroups = {
+
+  "Trade Subjects": [
+    "Solar",
+    "Fashion",
+    "Livestock",
+    "Beauty",
+    "Computer Hardware",
+    "Horticulture"
+  ],
+  "Science": [
+    "Biology",
+    "Chemistry",
+    "Physics",
+    "Geography",
+    "Foods & Nutrition",
+    "Agricultural Science",
+    "Further Mathematics",
+    "Technical Drawing"
+
+  ],
+  "Humanities": [
+    "Government",
+    "Visual Arts",
+    "Catering Craft",
+    "Nigerian History",
+    "Literature-in-English",
+    "Christian Religious studies"
+    
+  ],
+  "Business": [
+    "Accounting",
+    "Commerce",
+    "Economics",
+    "Marketing"
+    
+  ],
+  //"Other Subjects": subjects
+};
+
+// ======================================================
+// ADD SUBJECT ROW FUNCTION
+// ======================================================
+function addSubjectRow(subject = "", ca1 = "", ca2 = "", exam = "", total = "0", grade = "-", remark = "-", readOnly = false, isNew = true, studentClass = "") {
+  const row = document.createElement("tr");
+  const showCA = !isSS3 || currentTerm === "First Term";
+
+  const useDropdown = isNew && ["sss 1", "sss 2", "sss 3"].includes(studentClass.toLowerCase());
+
+  const subjectHTML = useDropdown
+    ? `<select class="form-control subject-input" ${readOnly ? "disabled" : ""}>
+        <option value="">Select Subject</option>
+        ${Object.entries(subjectGroups).map(([group, subs]) => `
+          <optgroup label="${group}">
+            ${subs.map(sub => `
+              <option value="${sub}" ${sub === subject ? "selected" : ""}>${sub}</option>
+            `).join("")}
+          </optgroup>
+        `).join("")}
+       </select>`
+    : `<input type="text" class="form-control subject-input" value="${subject}" ${readOnly ? "readonly" : ""}>`;
+
+  if (!showCA) {
+    // For SS3 Second/Third Term → Exam only
+    row.innerHTML = `
+      <td class="sl">${tbody.children.length + 1}</td>
+      <td>${subjectHTML}</td>
+      <td colspan="3" class="text-center text-danger fw-bold">NO C.A IN SS3</td>
+      <td><input type="number" class="form-control mark-exam" value="100" readonly></td>
+      <td><input type="number" class="form-control exam-input" value="${exam}" min="0" max="100" ${readOnly ? "readonly" : ""}></td>
+      <td class="total-score">${total}</td>
+      <td class="grade">${grade}</td>
+      <td class="remark">${remark}</td>
+      <td class="text-center">${readOnly ? "" : '<button class="btn btn-danger btn-sm remove-row">✕</button>'}</td>
+    `;
+  } else {
+    // Normal classes or SS3 First Term → show CA
+    row.innerHTML = `
+      <td class="sl">${tbody.children.length + 1}</td>
+      <td>${subjectHTML}</td>
+      <td><input type="number" class="form-control mark-ca" value="40" readonly></td>
+      <td><input type="number" class="form-control ca-input" value="${ca1}" min="0" max="20" ${readOnly ? "readonly" : ""}></td>
+      <td><input type="number" class="form-control ca-input" value="${ca2}" min="0" max="20" ${readOnly ? "readonly" : ""}></td>
+      <td><input type="number" class="form-control mark-exam" value="60" readonly></td>
+      <td><input type="number" class="form-control exam-input" value="${exam}" min="0" max="60" ${readOnly ? "readonly" : ""}></td>
+      <td class="total-score">${total}</td>
+      <td class="grade">${grade}</td>
+      <td class="remark">${remark}</td>
+      <td class="text-center">${readOnly ? "" : '<button class="btn btn-danger btn-sm remove-row">✕</button>'}</td>
+    `;
+  }
+
+  tbody.appendChild(row);
+  refreshRowNumbers();
+}
+
+// ======================================================
+// REFRESH ROW NUMBERS
+// ======================================================
+function refreshRowNumbers() {
+  Array.from(tbody.children).forEach((tr, i) =>
+    tr.querySelector(".sl").textContent = i + 1
+  );
+}
+
+// ======================================================
+// ADD / REMOVE ROWS HANDLERS
+// ======================================================
+document.getElementById("addRow").addEventListener("click", () => {
+  const studentClass = document.getElementById("studentClass").textContent || "";
+  addSubjectRow("", "", "", "", "0", "-", "-", false, true, studentClass);
+});
+
+tbody.addEventListener("click", (e) => {
+  if (e.target.classList.contains("remove-row")) {
+    e.target.closest("tr").remove();
+    refreshRowNumbers();
+  }
+});

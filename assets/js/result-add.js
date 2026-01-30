@@ -197,224 +197,182 @@ function loadDefaultSubjectsForClass(studentClass) {
 const defaultSubjects = {
 
   preNusery: [
-    "Language Skills",
-    "Number Concepts",
-    "Basic Science",
-    "Social Habits",
+    "Literacy",
+    "Numeracy",
     "Health Habits",
-    "Practical Life",
-    "Fine motor skills",
-    "Gymnastics",
-    "Bible Knowledge",
-    "Rymes & Songs",
-    "Arts & Crafts",
-    "Picture Reading",
-    "Character Education"
+    "Social Habits",
+    "Pre-Science",
+    "Handwriting",
+    "Poem",
+    "Songs And Rhythms",
+    "Colouring/Drawing"
+    
   ],
 
   prebasic1: [
-    "Language Skills",
-    "Number Concepts",
-    "Basic Science",
-    "Social Habits",
+    "Literacy (Letter Work)",
+    "Literacy (Language Domain)",
+    "Numeracy",
     "Health Habits",
-    "Practical Life",
-    "Sensorial Education",
-    "Fine motor skills",
-    "Gymnastics",
-    "Bible Knowledge",
-    "Computer Technology",
-    "Rymes & Songs",
-    "Literature",
-    "Arts & Crafts",
-    "Character Education",
+    "Social Habits",
+    "Physical And Health Education",
+    "Basic Science",
+    "Civic Education",
+    "Cultural And Creative Art",
+    "Personal Development",
+    "Songs And Rhythm",
+    "Handwriting",
+    "Dictation"
+    
   ],
 
   prebasic2: [
-    "Language Skills",
-    "Number Concepts",
-    "Basic Science",
-    "Social Habits",
+    "Literacy (Letter Work)",
+    "Literacy (Language Domain)",
+    "Numeracy",
     "Health Habits",
-    "Practical Life",
-    "Fine motor skills",
-    "Gymnastics",
-    "Bible Knowledge",
-    "Newstalk",
-    "Computer Technology",
-    "Rymes & Songs",
-    "Literature",
-    "Arts & Crafts",
-    "Picture Reading"
+    "Social Habits",
+    "Physical And Health Education",
+    "Basic Science",
+    "Civic Education",
+    "Cultural And Creative Art",
+    "Personal Development",
+    "Songs And Rhythm",
+    "Handwriting",
+    "Dictation"
   ],
 
   prebasic3: [
-    "Language Skills",
-    "Number Concepts",
-    "Basic Science",
-    "Social Habits",
+     "Literacy (Letter Work)",
+    "Literacy (Language Domain)",
+    "Numeracy",
     "Health Habits",
-    "Practical Life",
-    "Sensorial Education",
-    "Fine motor skills",
-    "Gymnastics",
-    "Bible Knowledge",
-    "Computer Technology",
-    "Rymes & Songs",
-    "Literature",
-    "Arts & Crafts",
-    "Character Education"
+    "Social Habits",
+    "Physical And Health Education",
+    "Basic Science",
+    "Civic Education",
+    "Cultural And Creative Art",
+    "Personal Development",
+    "Songs And Rhythm",
+    "Handwriting",
+    "Dictation"
   ],
 
   basic1: [
+    "English Language",
     "Mathematics",
-    "English Studies",
-    "Quantitative Reasoning",
-    "Verbal Reasoning",
-    "Civic Education",
-    "Christian Religious studies",
-    "Physical and Health Education",
-    "Basic Science and Technology",
-    "Social and citizenship studies",
-    "Cultural and creative Arts",
-    "Drawing",
-    "Agricultural science",
+    "Basic Science",
+    "Physical And Health Education",
+    "Religion Studies",
     "Nigerian History",
+    "Social And Citizenship Studies",
+    "Cultural And Creative Art",
     "Basic Digital Literacy",
-    "Home Economics",
-    "Yoruba",
-    "Security Education",
-    "Handwriting",
-    "Dictation",
-    "English literature"
+    "Prevocational Studies",
+    "French",
+    "Nigerian Language",
+    "Dictation"
+    
   ],
 
   basic2: [
+   "English Language",
     "Mathematics",
-    "English Studies",
-    "Quantitative Reasoning",
-    "Verbal Reasoning",
-    "Civic Education",
-    "Christian Religious studies",
-    "Physical and Health Education",
-    "Basic Science and Technology",
-    "Social and citizenship studies",
-    "Cultural and creative Arts",
-    "Drawing",
-    "Agricultural science",
+    "Basic Science",
+    "Physical And Health Education",
+    "Religion Studies",
     "Nigerian History",
+    "Social And Citizenship Studies",
+    "Cultural And Creative Art",
     "Basic Digital Literacy",
-    "Home Economics",
-    "Yoruba",
-    "Security Education",
-    "Handwriting",
-    "Dictation",
-    "English literature"
+    "Prevocational Studies",
+    "French",
+    "Nigerian Language",
+    "Dictation"
   ],
 
   basic3: [
+    "English Language",
     "Mathematics",
-    "English Studies",
-    "Quantitative Reasoning",
-    "Verbal Reasoning",
-    "Civic Education",
-    "Christian Religious studies",
-    "Physical and Health Education",
-    "Basic Science and Technology",
-    "Social and citizenship studies",
-    "Cultural and creative Arts",
-    "Drawing",
-    "Agricultural science",
+    "Basic Science",
+    "Physical And Health Education",
+    "Religion Studies",
     "Nigerian History",
+    "Social And Citizenship Studies",
+    "Cultural And Creative Art",
     "Basic Digital Literacy",
-    "Home Economics",
-    "Yoruba",
-    "Security Education",
-    "Handwriting",
-    "Dictation",
-    "English literature"
+    "Prevocational Studies",
+    "French",
+    "Nigerian Language",
+    "Dictation"
   ],
 
   basic4: [
+   "English Language",
     "Mathematics",
-    "English Studies",
-    "Quantitative Reasoning",
-    "Verbal Reasoning",
-    "Civic Education",
-    "Christian Religious studies",
-    "Physical and Health Education",
-    "Basic Science and Technology",
-    "Social and citizenship studies",
-    "Cultural and creative Arts",
-    "Drawing",
-    "Agricultural science",
+    "Basic Science",
+    "Physical And Health Education",
+    "Religion Studies",
     "Nigerian History",
+    "Social And Citizenship Studies",
+    "Cultural And Creative Art",
     "Basic Digital Literacy",
-    "Home Economics",
-    "Yoruba",
-    "Security Education",
-    "Dictation",
-    "English literature"
+    "Prevocational Studies",
+    "French",
+    "Nigerian Language",
+    "Dictation"
   ],
 
   basic5: [
+   "English Language",
     "Mathematics",
-    "Mathematics",
-    "English Studies",
-    "Quantitative Reasoning",
-    "Verbal Reasoning",
-    "Civic Education",
-    "Christian Religious studies",
-    "Physical and Health Education",
-    "Basic Science and Technology",
-    "Social and citizenship studies",
-    "Cultural and creative Arts",
-    "Drawing",
-    "Agricultural science",
+    "Basic Science",
+    "Physical And Health Education",
+    "Religion Studies",
     "Nigerian History",
+    "Social And Citizenship Studies",
+    "Cultural And Creative Art",
     "Basic Digital Literacy",
-    "Home Economics",
-    "Yoruba",
-    "Security Education",
-    "Handwriting",
-    "Dictation",
-    "English literature"
+    "Prevocational Studies",
+    "French",
+    "Nigerian Language",
+    "Dictation"
   ],
 
   jss1: [
-    "English", "Mathematics",
-    "Physical and Health Education (PHE)",
-    "Business studies (BS)", "Social and citizenship studies",
-    "Basic Science and Technology (BST)", "Christian Religion Studies (CRS)",
-    "Cultural and creative Art (CCA)", "Nigeria History","Digital Technology", "Intermediate Science", "French"
+    "English Language", "Mathematics",
+    "Physical And Health Education",
+    "Business studies (BS)", "Social and citizenship studies", "Entrepreneurship",
+    "Digital Technology", "Christian Religion Studies (CRS)",
+    "Cultural and creative Art (CCA)", "Nigeria History","Dictation", "Intermediate Science", "French"
   ],
 
   jss2: [
-    "English", "Mathematics",
-    "Physical and Health Education (PHE)",
-    "Business studies (BS)", "Social and citizenship studies",
-    "Basic Science and Technology (BST)", "Christian Religion Studies (CRS)",
-    "Cultural and creative Art (CCA)", "Nigeria History", "Digital Technology", "Intermediate Science", "French"
+     "English Language", "Mathematics",
+    "Physical And Health Education",
+    "Business studies (BS)", "Social and citizenship studies", "Entrepreneurship",
+    "Digital Technology", "Christian Religion Studies (CRS)",
+    "Cultural and creative Art (CCA)", "Nigeria History","Dictation", "Intermediate Science", "French"
   ],
 
   jss3: [
-    "English", "Mathematics",
-    "Physical and Health Education (PHE)",
-    "Business studies (BS)", "Social and citizenship studies",
-    "Basic Science and Technology (BST)", "Christian Religion Studies (CRS)",
-    "Cultural and creative Art (CCA)", "Nigeria History", "Digital Technology", "Intermediate Science", "French"
+    "English Language", "Mathematics",
+    "Physical And Health Education",
+    "Business studies (BS)", "Social and citizenship studies", "Entrepreneurship",
+    "Digital Technology", "Christian Religion Studies (CRS)",
+    "Cultural and creative Art (CCA)", "Nigeria History","Dictation", "Intermediate Science", "French"
   ],
 
   sss1: [
-    "General Mathematics", "English Language", "Citizenship and Heritage Studies", "Digital Technology"
+    "General Mathematics", "English Language", "Entrepreneurship", "Digital Technology"
   ],
 
   sss2: [
-    "General Mathematics", "English Language", "Citizenship and Heritage Studies", "Digital Technology"
+    "General Mathematics", "English Language", "Entrepreneurship", "Digital Technology"
   ],
 
   sss3: [
-  "General Mathematics", "English Language", "Citizenship and Heritage Studies", "Digital Technology"
+  "General Mathematics", "English Language", "Entrepreneurship", "Digital Technology"
   ]
 };
 
@@ -485,10 +443,10 @@ function addSubjectRow(subject = "", ca1 = "", ca2 = "", exam = "", total = "0",
   const row = document.createElement("tr");
   const showCA = !isSS3 || currentTerm === "First Term";
 
-  const useDropdown = isNew && ["jss 1", "jss 2", "jss 3", "sss 1", "sss 2", "sss 3"].includes(studentClass.toLowerCase());
+  const useDropdown = isNew && ["sss 1", "sss 2", "sss 3"].includes(studentClass.toLowerCase());
 
   const subjectHTML = useDropdown
-    ? `<select class="form-control subject-input" ${readOnly ? "disabled" : ""}>
+    ? `<select class="form-control subject-input" : ""}>
         <option value="">Select Subject</option>
         ${Object.entries(subjectGroups).map(([group, subs]) => `
           <optgroup label="${group}">
@@ -498,7 +456,7 @@ function addSubjectRow(subject = "", ca1 = "", ca2 = "", exam = "", total = "0",
           </optgroup>
         `).join("")}
        </select>`
-    : `<input type="text" class="form-control subject-input" value="${subject}" ${readOnly ? "readonly" : ""}>`;
+    : `<input type="text" class="form-control subject-input" value="${subject}"  ${readOnly ? "readonly" : ""}>`;
 
   if (!showCA) {
     // For SS3 Second/Third Term → Exam only
@@ -519,10 +477,10 @@ function addSubjectRow(subject = "", ca1 = "", ca2 = "", exam = "", total = "0",
       <td class="sl">${tbody.children.length + 1}</td>
       <td>${subjectHTML}</td>
       <td><input type="number" class="form-control mark-ca" value="40" readonly></td>
-      <td><input type="number" class="form-control ca-input" value="${ca1}" min="0" max="20" ${readOnly ? "readonly" : ""}></td>
-      <td><input type="number" class="form-control ca-input" value="${ca2}" min="0" max="20" ${readOnly ? "readonly" : ""}></td>
+      <td><input type="number" class="form-control ca-input" value="${ca1}" min="0" max="20" : ""}></td>
+      <td><input type="number" class="form-control ca-input" value="${ca2}" min="0" max="20" : ""}></td>
       <td><input type="number" class="form-control mark-exam" value="60" readonly></td>
-      <td><input type="number" class="form-control exam-input" value="${exam}" min="0" max="60" ${readOnly ? "readonly" : ""}></td>
+      <td><input type="number" class="form-control exam-input" value="${exam}" min="0" max="60" : ""}></td>
       <td class="total-score">${total}</td>
       <td class="grade">${grade}</td>
       <td class="remark">${remark}</td>
@@ -616,7 +574,7 @@ tbody.addEventListener("input", (e) => {
 function updateGrade(tr, total) {
   let grade = "-", remark = "-";
 
-  if (total >= 70) {
+  if (total >= 80) {
     grade = "A";
     remark = "Excellent";
   } 
@@ -628,17 +586,13 @@ function updateGrade(tr, total) {
     grade = "C";
     remark = "Good";
   } 
-  else if (total >= 45) {
+  else if (total >= 40) {
     grade = "D";
     remark = "Average";
   } 
-  else if (total >= 40) {
-    grade = "E";
-    remark = "Pass";
-  }
   else {
-    grade = "F";
-    remark = "Fail";
+    grade = "E";
+    remark = "Needs Improvement";
   }
 
   tr.querySelector(".grade").textContent = grade;
@@ -746,8 +700,9 @@ if (nextTermDateInput) {
 // Affective & Psychomotor Domain Validation
 // ---------------------------
 const remarkFields = [
-  "Neatness", "Politeness", "Punctuality", "Responsibility",
-  "Teamwork", "Leadership", "Helping", "Honesty", "Participation"
+  "Neatness", "Politeness", "Punctuality", "Cooperation",
+  "Emotional", "Leadership", "Health", "Attitude", "Attentiveness", "Preservance", "Handwriting",
+  "Verbal", "Games", "Health", "Handlings", "Drawing", "Musical"
 ];
 
 remarkFields.forEach(id => {
@@ -822,17 +777,27 @@ async function loadPreviousResults() {
         );
       });
 
-      document.getElementById("classTeacherRemark").value = data.classTeacherRemark || "";
+       document.getElementById("classTeacherRemark").value = data.classTeacherRemark || "";
       document.getElementById("headTeacherRemark").value = data.headTeacherRemark || "";
       document.getElementById("Neatness").value = data.Neatness || "";
       document.getElementById("Politeness").value = data.Politeness || "";
       document.getElementById("Punctuality").value = data.Punctuality || "";
-      document.getElementById("Responsibility").value = data.Responsibility || "";
-      document.getElementById("Teamwork").value = data.Teamwork || "";
+      document.getElementById("Cooperation").value = data.Cooperation || "";
+      document.getElementById("Emotional").value = data.Emotional || "";
       document.getElementById("Leadership").value = data.Leadership || "";
-      document.getElementById("Helping").value = data.Helping || "";
-      document.getElementById("Honesty").value = data.Honesty || "";
-      document.getElementById("Participation").value = data.Participation || "";
+      document.getElementById("Health").value = data.Health || "";
+      document.getElementById("Attitude").value = data.Attitude || "";
+      document.getElementById("Attentiveness").value = data.Attentiveness || "";
+      document.getElementById("Preservance").value = data.Preservance || "";
+      document.getElementById("Handwriting").value = data.Handwriting || "";
+      document.getElementById("Verbal").value = data.Verbal || "";
+      document.getElementById("Games").value = data.Games || "";
+      document.getElementById("Sport").value = data.Sport || "";
+      document.getElementById("Handlings").value = data.Handlings || "";
+      document.getElementById("Drawing").value = data.Drawing || "";
+      document.getElementById("Musical").value = data.Musical || "";
+
+
       document.getElementById("daysOpened").value = data.daysOpened || "";
       document.getElementById("daysPresent").value = data.daysPresent || "";
       document.getElementById("daysAbsent").value = data.daysAbsent || "";
@@ -859,85 +824,112 @@ window.addEventListener("load", () => setTimeout(loadPreviousResults, 200));
 
 
 // ---------------------------
-// Save Result (Updated for SS3 & Normal Classes)
+// Save Result (Professional & Edit-Friendly, Flat resultData)
 // ---------------------------
 document.getElementById("saveResult").addEventListener("click", async () => {
-  const term = document.getElementById("studentTerm").value.trim();
-  const classTeacherRemark = document.getElementById("classTeacherRemark").value.trim();
-  const headTeacherRemark = document.getElementById("headTeacherRemark").value.trim();
-  const Neatness = document.getElementById("Neatness").value.trim();
-  const Politeness = document.getElementById("Politeness").value.trim();
-  const Punctuality = document.getElementById("Punctuality").value.trim();
-  const Responsibility = document.getElementById("Responsibility").value.trim();
-  const Teamwork = document.getElementById("Teamwork").value.trim();
-  const Leadership = document.getElementById("Leadership").value.trim();
-  const Helping = document.getElementById("Helping").value.trim();
-  const Honesty = document.getElementById("Honesty").value.trim();
-  const Participation = document.getElementById("Participation").value.trim();
-  const daysOpened = document.getElementById("daysOpened").value.trim();
-  const daysPresent = document.getElementById("daysPresent").value.trim();
-  const daysAbsent = document.getElementById("daysAbsent").value.trim();
-  const studentHeight = document.getElementById("studentHeight").value.trim();
-  const studentWeight = document.getElementById("studentWeight").value.trim();
-  const nextTermDate = document.getElementById("nextTermDate").value.trim();
-
-  const subjects = [];
-  tbody.querySelectorAll("tr").forEach(tr => {
-    const subjectInput = tr.querySelector(".subject-input");
-    const examInput = tr.querySelector(".exam-input");
-    const caInputs = tr.querySelectorAll(".ca-input");
-
-    const subject = subjectInput ? subjectInput.value.trim() : "";
-    const exam = examInput ? parseInt(examInput.value) || 0 : 0;
-
-    // Only take CA values if they exist (normal classes)
-    const ca1 = caInputs.length > 0 ? parseInt(caInputs[0].value) || 0 : 0;
-    const ca2 = caInputs.length > 1 ? parseInt(caInputs[1].value) || 0 : 0;
-
-    const total = ca1 + ca2 + exam;
-    const grade = tr.querySelector(".grade")?.textContent || "-";
-    const remark = tr.querySelector(".remark")?.textContent || "-";
-
-    // Save row if editable or SS3 (even though SS3 has no CA)
-    if (subject && (!subjectInput.readOnly || isSS3)) {
-      subjects.push({ subject, ca1, ca2, exam, total, grade, remark });
-    }
-  });
-
-  if (!subjects.length && !classTeacherRemark.length) {
-    return showNotification("⚠️ Add at least one new subject or comment before saving.", false);
-  }
-
-  const resultData = {
-    studentID,
-    term,
-    classTeacherRemark,
-    headTeacherRemark,
-    Neatness,
-    Politeness,
-    Punctuality,
-    Responsibility,
-    Teamwork,
-    Leadership,
-    Helping,
-    Honesty,
-    Participation,
-    daysOpened,
-    daysPresent,
-    daysAbsent,
-    studentHeight,
-    studentWeight,
-    nextTermDate,
-    dateIssued: new Date().toLocaleDateString(),
-    subjects
-  };
-
   try {
+    const term = document.getElementById("studentTerm").value.trim();
+    const classTeacherRemark = document.getElementById("classTeacherRemark").value.trim();
+    const headTeacherRemark = document.getElementById("headTeacherRemark").value.trim();
+
+    // Behaviour and other assessment fields
+    const Neatness = document.getElementById("Neatness").value.trim();
+    const Politeness = document.getElementById("Politeness").value.trim();
+    const Punctuality = document.getElementById("Punctuality").value.trim();
+    const Cooperation = document.getElementById("Cooperation").value.trim();
+    const Health = document.getElementById("Health").value.trim();
+    const Leadership = document.getElementById("Leadership").value.trim();
+    const Attitude = document.getElementById("Attitude").value.trim();
+    const Attentiveness = document.getElementById("Attentiveness").value.trim();
+    const Preservance = document.getElementById("Preservance").value.trim();
+    const Handwriting = document.getElementById("Handwriting").value.trim();
+    const Verbal = document.getElementById("Verbal").value.trim();
+    const Games = document.getElementById("Games").value.trim();
+    const Sport = document.getElementById("Sport").value.trim();
+    const Handlings = document.getElementById("Handlings").value.trim();
+    const Drawing = document.getElementById("Drawing").value.trim();
+    const Musical = document.getElementById("Musical") ? document.getElementById("Musical").value.trim() : "";
+
+    // Attendance & physical
+    const daysOpened = document.getElementById("daysOpened").value.trim();
+    const daysPresent = document.getElementById("daysPresent").value.trim();
+    const daysAbsent = document.getElementById("daysAbsent").value.trim();
+    const studentHeight = document.getElementById("studentHeight").value.trim();
+    const studentWeight = document.getElementById("studentWeight").value.trim();
+    const nextTermDate = document.getElementById("nextTermDate").value.trim();
+
+    // ---------------------------
+    // Collect subjects dynamically
+    // ---------------------------
+    const subjects = [];
+    tbody.querySelectorAll("tr").forEach(tr => {
+      const subjectInput = tr.querySelector(".subject-input");
+      if (!subjectInput) return;
+
+      const subject = subjectInput.value.trim();
+      if (!subject) return; // skip empty subjects
+
+      const examInput = tr.querySelector(".exam-input");
+      const caInputs = tr.querySelectorAll(".ca-input");
+
+      const ca1 = caInputs.length > 0 ? parseInt(caInputs[0].value) || 0 : 0;
+      const ca2 = caInputs.length > 1 ? parseInt(caInputs[1].value) || 0 : 0;
+      const exam = examInput ? parseInt(examInput.value) || 0 : 0;
+
+      const total = ca1 + ca2 + exam;
+      const grade = tr.querySelector(".grade")?.textContent || "-";
+      const remark = tr.querySelector(".remark")?.textContent || "-";
+
+      subjects.push({ subject, ca1, ca2, exam, total, grade, remark });
+    });
+
+    // ---------------------------
+    // Prepare result object (flat structure)
+    // ---------------------------
+    const resultData = {
+      studentID,
+      term,
+      classTeacherRemark,
+      headTeacherRemark,
+      Neatness,
+      Politeness,
+      Punctuality,
+      Cooperation,
+      Health,
+      Leadership,
+      Attitude,
+      Attentiveness,
+      Preservance,
+      Handwriting,
+      Verbal,
+      Games,
+      Sport,
+      Handlings,
+      Drawing,
+      Musical,
+      daysOpened,
+      daysPresent,
+      daysAbsent,
+      studentHeight,
+      studentWeight,
+      nextTermDate,
+      dateIssued: new Date().toLocaleDateString(),
+      subjects
+    };
+
+    // ---------------------------
+    // Save / update result
+    // ---------------------------
     const res = await saveResult(studentID, term, resultData);
+
     showNotification(res.message, res.success);
-    if (res.success) setTimeout(loadPreviousResults, 400);
+
+    if (res.success) {
+      setTimeout(loadPreviousResults, 400);
+    }
+
   } catch (err) {
-    console.error(err);
+    console.error("🔥 Failed to save result:", err);
     showNotification("⚠️ Failed to save result: " + err.message, false);
   }
 });
@@ -985,14 +977,25 @@ document.getElementById("PrintResult").addEventListener("click", () => {
     const sessionYear = document.getElementById("sessionYear")?.textContent.trim() || "2025/2026";
     const classRemark = document.getElementById("classTeacherRemark").value || "-";
     const headRemark = document.getElementById("headTeacherRemark").value || "-";
+
     const Neatness = document.getElementById("Neatness")?.value || "-";
     const Politeness = document.getElementById("Politeness")?.value || "-";
     const Punctuality = document.getElementById("Punctuality")?.value || "-";
-    const Responsibility = document.getElementById("Responsibility")?.value || "-";
+    const Cooperation = document.getElementById("Cooperation")?.value || "-";
     const Leadership = document.getElementById("Leadership")?.value || "-";
-    const Helping = document.getElementById("Helping")?.value || "-";
-    const Honesty = document.getElementById("Honesty")?.value || "-";
-    const Teamwork = document.getElementById("Teamwork")?.value || "-";
+    const Emotional = document.getElementById("Emotional")?.value || "-";
+    const Health = document.getElementById("Health")?.value || "-";
+    const Attitude = document.getElementById("Attitude")?.value || "-";
+    const Attentiveness = document.getElementById("Attentiveness")?.value || "-";
+    const Preservance = document.getElementById("Preservance")?.value || "-";
+    const Handwriting = document.getElementById("Handwriting")?.value || "-";
+    const Verbal = document.getElementById("Verbal")?.value || "-";
+    const Games = document.getElementById("Games")?.value || "-";
+    const Sport = document.getElementById("Sport")?.value || "-";
+     const Handlings = document.getElementById("Handlings")?.value || "-";
+      const Drawing = document.getElementById("Drawing")?.value || "-";
+       const Musical = document.getElementById("Musical")?.value || "-";
+
     const daysOpened = document.getElementById("daysOpened")?.value || "-";
     const daysPresent = document.getElementById("daysPresent")?.value || "-";
     const daysAbsent = document.getElementById("daysAbsent")?.value || "-";
@@ -1012,7 +1015,7 @@ const avgScore = totals.length ? (totalScore / totals.length).toFixed(2) : "0.00
 // -----------------------------
 let headRemarkAuto = "-";
 
-if (avgScore >= 75)
+if (avgScore >= 80)
   headRemarkAuto = "Excellent performance. You have shown strong understanding and commitment. Keep up the good work.";
 else if (avgScore >= 60)
   headRemarkAuto = "Very good result. Your effort is commendable. Continue working hard to achieve more.";
@@ -1372,11 +1375,11 @@ tr:nth-child(even) td {
           </tr>
         </thead>
         <tbody>
-          <tr><td>A</td><td>85-100</td><td>Excellent</td></tr>
-          <tr><td>B</td><td>75-84</td><td>Very Good</td></tr>
-          <tr><td>C</td><td>55-74</td><td>Good</td></tr>
-          <tr><td>D</td><td>40-54</td><td>Average</td></tr>
-          <tr><td>E</td><td>0-40</td><td>Needs Improvement</td></tr>
+          <tr><td>A</td><td>80-100</td><td>Excellent</td></tr>
+          <tr><td>B</td><td>60-79</td><td>Very Good</td></tr>
+          <tr><td>C</td><td>50-59</td><td>Good</td></tr>
+          <tr><td>D</td><td>40-49</td><td>Average</td></tr>
+          <tr><td>E</td><td>0-39</td><td>Needs Improvement</td></tr>
         </tbody>
       </table>
     </div>
@@ -1418,19 +1421,19 @@ tr:nth-child(even) td {
           </tr>
           <tr>
             <td>Responsibility</td>
-            <td class="grade-tick">${Responsibility=='A'?'✔️':''}</td>
-            <td class="grade-tick">${Responsibility=='B'?'✔️':''}</td>
-            <td class="grade-tick">${Responsibility=='C'?'✔️':''}</td>
-            <td class="grade-tick">${Responsibility=='D'?'✔️':''}</td>
-            <td class="grade-tick">${Responsibility=='E'?'✔️':''}</td>
+            <td class="grade-tick">${Cooperation=='A'?'✔️':''}</td>
+            <td class="grade-tick">${Cooperation=='B'?'✔️':''}</td>
+            <td class="grade-tick">${Cooperation=='C'?'✔️':''}</td>
+            <td class="grade-tick">${Cooperation=='D'?'✔️':''}</td>
+            <td class="grade-tick">${Cooperation=='E'?'✔️':''}</td>
           </tr>
           <tr>
             <td>Teamwork</td>
-            <td class="grade-tick">${Teamwork=='A'?'✔️':''}</td>
-            <td class="grade-tick">${Teamwork=='B'?'✔️':''}</td>
-            <td class="grade-tick">${Teamwork=='C'?'✔️':''}</td>
-            <td class="grade-tick">${Teamwork=='D'?'✔️':''}</td>
-            <td class="grade-tick">${Teamwork=='E'?'✔️':''}</td>
+            <td class="grade-tick">${Emotional=='A'?'✔️':''}</td>
+            <td class="grade-tick">${Emotional=='B'?'✔️':''}</td>
+            <td class="grade-tick">${Emotional=='C'?'✔️':''}</td>
+            <td class="grade-tick">${Emotional=='D'?'✔️':''}</td>
+            <td class="grade-tick">${Emotional=='E'?'✔️':''}</td>
           </tr>
           <tr>
             <td>Leadership</td>
@@ -1442,12 +1445,93 @@ tr:nth-child(even) td {
           </tr>
           <tr>
             <td>Helping Others</td>
-            <td class="grade-tick">${Helping=='A'?'✔️':''}</td>
-            <td class="grade-tick">${Helping=='B'?'✔️':''}</td>
-            <td class="grade-tick">${Helping=='C'?'✔️':''}</td>
-            <td class="grade-tick">${Helping=='D'?'✔️':''}</td>
-            <td class="grade-tick">${Helping=='E'?'✔️':''}</td>
+            <td class="grade-tick">${Health=='A'?'✔️':''}</td>
+            <td class="grade-tick">${Health=='B'?'✔️':''}</td>
+            <td class="grade-tick">${Health=='C'?'✔️':''}</td>
+            <td class="grade-tick">${Health=='D'?'✔️':''}</td>
+            <td class="grade-tick">${Health=='E'?'✔️':''}</td>
           </tr>
+           <tr>
+            <td>Helping Others</td>
+            <td class="grade-tick">${Attitude=='A'?'✔️':''}</td>
+            <td class="grade-tick">${Attitude=='B'?'✔️':''}</td>
+            <td class="grade-tick">${Attitude=='C'?'✔️':''}</td>
+            <td class="grade-tick">${Attitude=='D'?'✔️':''}</td>
+            <td class="grade-tick">${Attitude=='E'?'✔️':''}</td>
+          </tr>
+           <tr>
+            <td>Helping Others</td>
+            <td class="grade-tick">${Attentiveness=='A'?'✔️':''}</td>
+            <td class="grade-tick">${Attentiveness=='B'?'✔️':''}</td>
+            <td class="grade-tick">${Attentiveness=='C'?'✔️':''}</td>
+            <td class="grade-tick">${Attentiveness=='D'?'✔️':''}</td>
+            <td class="grade-tick">${Attentiveness=='E'?'✔️':''}</td>
+          </tr>
+           <tr>
+            <td>Helping Others</td>
+            <td class="grade-tick">${Preservance=='A'?'✔️':''}</td>
+            <td class="grade-tick">${Preservance=='B'?'✔️':''}</td>
+            <td class="grade-tick">${Preservance=='C'?'✔️':''}</td>
+            <td class="grade-tick">${Preservance=='D'?'✔️':''}</td>
+            <td class="grade-tick">${Preservance=='E'?'✔️':''}</td>
+          </tr>
+           <tr>
+            <td>Helping Others</td>
+            <td class="grade-tick">${Handwriting=='A'?'✔️':''}</td>
+            <td class="grade-tick">${Handwriting=='B'?'✔️':''}</td>
+            <td class="grade-tick">${Handwriting=='C'?'✔️':''}</td>
+            <td class="grade-tick">${Handwriting=='D'?'✔️':''}</td>
+            <td class="grade-tick">${Handwriting=='E'?'✔️':''}</td>
+          </tr>
+           <tr>
+            <td>Helping Others</td>
+            <td class="grade-tick">${Verbal=='A'?'✔️':''}</td>
+            <td class="grade-tick">${Verbal=='B'?'✔️':''}</td>
+            <td class="grade-tick">${Verbal=='C'?'✔️':''}</td>
+            <td class="grade-tick">${Verbal=='D'?'✔️':''}</td>
+            <td class="grade-tick">${Verbal=='E'?'✔️':''}</td>
+          </tr>
+           <tr>
+            <td>Helping Others</td>
+            <td class="grade-tick">${Games=='A'?'✔️':''}</td>
+            <td class="grade-tick">${Games=='B'?'✔️':''}</td>
+            <td class="grade-tick">${Games=='C'?'✔️':''}</td>
+            <td class="grade-tick">${Games=='D'?'✔️':''}</td>
+            <td class="grade-tick">${Games=='E'?'✔️':''}</td>
+          </tr>
+           <tr>
+            <td>Helping Others</td>
+            <td class="grade-tick">${Sport=='A'?'✔️':''}</td>
+            <td class="grade-tick">${Sport=='B'?'✔️':''}</td>
+            <td class="grade-tick">${Sport=='C'?'✔️':''}</td>
+            <td class="grade-tick">${Sport=='D'?'✔️':''}</td>
+            <td class="grade-tick">${Sport=='E'?'✔️':''}</td>
+          </tr>
+           <tr>
+            <td>Helping Others</td>
+            <td class="grade-tick">${Handlings=='A'?'✔️':''}</td>
+            <td class="grade-tick">${Handlings=='B'?'✔️':''}</td>
+            <td class="grade-tick">${Handlings=='C'?'✔️':''}</td>
+            <td class="grade-tick">${Handlings=='D'?'✔️':''}</td>
+            <td class="grade-tick">${Handlings=='E'?'✔️':''}</td>
+          </tr>
+           <tr>
+            <td>Helping Others</td>
+            <td class="grade-tick">${Drawing=='A'?'✔️':''}</td>
+            <td class="grade-tick">${Drawing=='B'?'✔️':''}</td>
+            <td class="grade-tick">${Drawing=='C'?'✔️':''}</td>
+            <td class="grade-tick">${Drawing=='D'?'✔️':''}</td>
+            <td class="grade-tick">${Drawing=='E'?'✔️':''}</td>
+          </tr>
+          <tr>
+            <td>Helping Others</td>
+            <td class="grade-tick">${Musical=='A'?'✔️':''}</td>
+            <td class="grade-tick">${Musical=='B'?'✔️':''}</td>
+            <td class="grade-tick">${Musical=='C'?'✔️':''}</td>
+            <td class="grade-tick">${Musical=='D'?'✔️':''}</td>
+            <td class="grade-tick">${Musical=='E'?'✔️':''}</td>
+          </tr>
+          
         </tbody>
       </table>
     </div>
@@ -1458,7 +1542,7 @@ tr:nth-child(even) td {
 <div class="signatures">
   <div class="sign">
     <img id="classTeacherSignatureImg" class="signature-img">
-    <div class="signature-title">Class Teacher’s Signature</div>
+    <div class="signature-title">School Stamp </div>
   </div>
 
   <div class="sign">
@@ -1477,6 +1561,12 @@ tr:nth-child(even) td {
     printWindow.onload = () => {
       const fileTitle = `${studentName.replace(/\s+/g, "_")}_${studentID}_Result`;
       printWindow.document.title = fileTitle;
+
+      printWindow.document.getElementById("classTeacherSignatureImg").src =
+    "assets/images/auth/test 2.png";
+
+    printWindow.document.getElementById("proprietorSignatureImg").src =
+    "assets/images/auth/test 1.png";
 
       setTimeout(() => {
         printWindow.focus();
@@ -1775,7 +1865,7 @@ tr:nth-child(even) td {
 <div class="signatures">
   <div class="sign">
     <img id="classTeacherSignatureImg" class="signature-img">
-    <div class="signature-title">Class Teacher’s Signature</div>
+    <div class="signature-title">School Stamp </div>
   </div>
 
   <div class="sign">
@@ -1793,6 +1883,12 @@ tr:nth-child(even) td {
     printWindow.onload = () => {
         const fileTitle = `${studentName.replace(/\s+/g, "_")}_${studentID}_Result`;
         printWindow.document.title = fileTitle;
+
+       printWindow.document.getElementById("classTeacherSignatureImg").src =
+    "assets/images/auth/test 2.png";
+
+    printWindow.document.getElementById("proprietorSignatureImg").src =
+    "assets/images/auth/test 1.png";
 
         setTimeout(() => { printWindow.focus(); printWindow.print(); }, 1000);
         printWindow.onafterprint = printWindow.onbeforeunload = () => {
@@ -1838,11 +1934,11 @@ async function loadYearlySummary() {
         subjectCount++;
 
         let grade, remark;
-        if (avgTotal >= 70) { grade = "A"; remark = "Excellent"; }
+        if (avgTotal >= 80) { grade = "A"; remark = "Excellent"; }
         else if (avgTotal >= 60) { grade = "B"; remark = "Very Good"; }
         else if (avgTotal >= 50) { grade = "C"; remark = "Good"; }
         else if (avgTotal >= 40) { grade = "D"; remark = "Averge"; }
-        else { grade = "F"; remark = "Fail"; }
+        else { grade = "E"; remark = "Below"; }
 
         const row = document.createElement("tr");
         row.innerHTML = `<td>${index+1}</td><td>${subjectKey}</td><td>${firstTerm}</td><td>${secondTerm}</td><td>${thirdTerm}</td><td>${avgTotal}</td><td>${grade}</td><td>${remark}</td>`;
@@ -1858,7 +1954,7 @@ async function loadYearlySummary() {
     if (overallAverage >= 80) promotionStatus = "Promoted to the Next Class with Distinction";
     else if (overallAverage >= 50) promotionStatus = "Promoted to the Next Class";
     else if (overallAverage >= 40) promotionStatus = "Promotion on Trial";
-    else promotionStatus = "Fail";
+    else promotionStatus = "Need Acadmic Support";
 
     totalScoreValue = totalScore;
     avgScore = overallAverage;
