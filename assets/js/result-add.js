@@ -1279,7 +1279,7 @@ tr:nth-child(even) td {
   </div>
 
   <div class="header-right">
-    <h2>LIFE POINT ACADEMY| TERM RESULT</h2>
+    <h2>LIFE POINT ACADEMY | TERM RESULT</h2>
     <p>ODO-EJA, MALLAM-TOPE, OSOGBO, OSUN STATE</p>
     <p>Email: Tpoint619@gmail.com</p>
     <p>Tel: 08036972619, 07032733082</p>
@@ -1808,7 +1808,7 @@ tr:nth-child(even) td {
   </div>
 
  <div class="header-right">
-    <h2>LIFE POINT ACADEMY| PROMOTION RESULT</h2>
+    <h2>LIFE POINT ACADEMY | PROMOTION RESULT</h2>
     <p>ODO-EJA, MALLAM-TOPE, OSOGBO, OSUN STATE</p>
     <p>Email: Tpoint619@gmail.com</p>
     <p>Tel: 08036972619, 07032733082</p>
