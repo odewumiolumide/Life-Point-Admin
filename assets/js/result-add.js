@@ -1443,7 +1443,7 @@ tr:nth-child(even) td {
             <td class="grade-tick">${Leadership=='E'?'✔️':''}</td>
           </tr>
           <tr>
-            <td>Helping Others</td>
+            <td>Health</td>
             <td class="grade-tick">${Health=='A'?'✔️':''}</td>
             <td class="grade-tick">${Health=='B'?'✔️':''}</td>
             <td class="grade-tick">${Health=='C'?'✔️':''}</td>
@@ -1451,7 +1451,7 @@ tr:nth-child(even) td {
             <td class="grade-tick">${Health=='E'?'✔️':''}</td>
           </tr>
            <tr>
-            <td>Helping Others</td>
+            <td>Attitude</td>
             <td class="grade-tick">${Attitude=='A'?'✔️':''}</td>
             <td class="grade-tick">${Attitude=='B'?'✔️':''}</td>
             <td class="grade-tick">${Attitude=='C'?'✔️':''}</td>
@@ -1459,7 +1459,7 @@ tr:nth-child(even) td {
             <td class="grade-tick">${Attitude=='E'?'✔️':''}</td>
           </tr>
            <tr>
-            <td>Helping Others</td>
+            <td>Attentiveness</td>
             <td class="grade-tick">${Attentiveness=='A'?'✔️':''}</td>
             <td class="grade-tick">${Attentiveness=='B'?'✔️':''}</td>
             <td class="grade-tick">${Attentiveness=='C'?'✔️':''}</td>
@@ -1467,7 +1467,7 @@ tr:nth-child(even) td {
             <td class="grade-tick">${Attentiveness=='E'?'✔️':''}</td>
           </tr>
            <tr>
-            <td>Helping Others</td>
+            <td>Preservance</td>
             <td class="grade-tick">${Preservance=='A'?'✔️':''}</td>
             <td class="grade-tick">${Preservance=='B'?'✔️':''}</td>
             <td class="grade-tick">${Preservance=='C'?'✔️':''}</td>
@@ -1475,7 +1475,7 @@ tr:nth-child(even) td {
             <td class="grade-tick">${Preservance=='E'?'✔️':''}</td>
           </tr>
            <tr>
-            <td>Helping Others</td>
+            <td>Handwriting</td>
             <td class="grade-tick">${Handwriting=='A'?'✔️':''}</td>
             <td class="grade-tick">${Handwriting=='B'?'✔️':''}</td>
             <td class="grade-tick">${Handwriting=='C'?'✔️':''}</td>
@@ -1483,7 +1483,7 @@ tr:nth-child(even) td {
             <td class="grade-tick">${Handwriting=='E'?'✔️':''}</td>
           </tr>
            <tr>
-            <td>Helping Others</td>
+            <td>Verbal Fluency</td>
             <td class="grade-tick">${Verbal=='A'?'✔️':''}</td>
             <td class="grade-tick">${Verbal=='B'?'✔️':''}</td>
             <td class="grade-tick">${Verbal=='C'?'✔️':''}</td>
@@ -1491,7 +1491,7 @@ tr:nth-child(even) td {
             <td class="grade-tick">${Verbal=='E'?'✔️':''}</td>
           </tr>
            <tr>
-            <td>Helping Others</td>
+            <td>Games</td>
             <td class="grade-tick">${Games=='A'?'✔️':''}</td>
             <td class="grade-tick">${Games=='B'?'✔️':''}</td>
             <td class="grade-tick">${Games=='C'?'✔️':''}</td>
@@ -1499,7 +1499,7 @@ tr:nth-child(even) td {
             <td class="grade-tick">${Games=='E'?'✔️':''}</td>
           </tr>
            <tr>
-            <td>Helping Others</td>
+            <td>Sport</td>
             <td class="grade-tick">${Sport=='A'?'✔️':''}</td>
             <td class="grade-tick">${Sport=='B'?'✔️':''}</td>
             <td class="grade-tick">${Sport=='C'?'✔️':''}</td>
@@ -1507,7 +1507,7 @@ tr:nth-child(even) td {
             <td class="grade-tick">${Sport=='E'?'✔️':''}</td>
           </tr>
            <tr>
-            <td>Helping Others</td>
+            <td>Handlings</td>
             <td class="grade-tick">${Handlings=='A'?'✔️':''}</td>
             <td class="grade-tick">${Handlings=='B'?'✔️':''}</td>
             <td class="grade-tick">${Handlings=='C'?'✔️':''}</td>
@@ -1515,7 +1515,7 @@ tr:nth-child(even) td {
             <td class="grade-tick">${Handlings=='E'?'✔️':''}</td>
           </tr>
            <tr>
-            <td>Helping Others</td>
+            <td>Drawing</td>
             <td class="grade-tick">${Drawing=='A'?'✔️':''}</td>
             <td class="grade-tick">${Drawing=='B'?'✔️':''}</td>
             <td class="grade-tick">${Drawing=='C'?'✔️':''}</td>
@@ -1523,7 +1523,7 @@ tr:nth-child(even) td {
             <td class="grade-tick">${Drawing=='E'?'✔️':''}</td>
           </tr>
           <tr>
-            <td>Helping Others</td>
+            <td>Musical</td>
             <td class="grade-tick">${Musical=='A'?'✔️':''}</td>
             <td class="grade-tick">${Musical=='B'?'✔️':''}</td>
             <td class="grade-tick">${Musical=='C'?'✔️':''}</td>
