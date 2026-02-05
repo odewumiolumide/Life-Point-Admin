@@ -148,12 +148,13 @@ function loadDefaultSubjectsForClass(studentClass) {
 
   // Map normalized input → defaultSubjects key
   const classMap = {
-    "prenusery": "preNusery", // fix for "Pre Nusery"
+   "creche": "creche", // fix for "Pre Nusery"
+    "kg1": "kg1",
+    "kg2": "kg2",
     "nusery1": "prebasic1",
     "nursery1": "prebasic1",
     "nusery2": "prebasic2",
     "nursery2": "prebasic2",
-    "prepgrade": "prebasic3",
     "grade1": "basic1",
     "grade2": "basic2",
     "grade3": "basic3",
@@ -195,7 +196,7 @@ function loadDefaultSubjectsForClass(studentClass) {
 
 const defaultSubjects = {
 
-  preNusery: [
+  creche: [
     "Literacy",
     "Numeracy",
     "Health Habits",
@@ -208,24 +209,33 @@ const defaultSubjects = {
     
   ],
 
-  prebasic1: [
-    "Literacy (Letter Work)",
-    "Literacy (Language Domain)",
+   kg1: [
+    "Literacy",
     "Numeracy",
     "Health Habits",
     "Social Habits",
-    "Physical And Health Education",
-    "Basic Science",
-    "Civic Education",
-    "Cultural And Creative Art",
-    "Personal Development",
-    "Songs And Rhythm",
+    "Pre-Science",
     "Handwriting",
-    "Dictation"
+    "Poem",
+    "Songs And Rhythms",
+    "Colouring/Drawing"
     
   ],
 
-  prebasic2: [
+   kg2: [
+    "Literacy",
+    "Numeracy",
+    "Health Habits",
+    "Social Habits",
+    "Pre-Science",
+    "Handwriting",
+    "Poem",
+    "Songs And Rhythms",
+    "Colouring/Drawing"
+    
+  ],
+
+  nursery1: [
     "Literacy (Letter Work)",
     "Literacy (Language Domain)",
     "Numeracy",
@@ -238,11 +248,14 @@ const defaultSubjects = {
     "Personal Development",
     "Songs And Rhythm",
     "Handwriting",
-    "Dictation"
+    "Dictation",
+    "Verbal Reasoning",
+    "Quantitative Reasoning"
+    
   ],
 
-  prebasic3: [
-     "Literacy (Letter Work)",
+  nursery2: [
+    "Literacy (Letter Work)",
     "Literacy (Language Domain)",
     "Numeracy",
     "Health Habits",
@@ -254,22 +267,29 @@ const defaultSubjects = {
     "Personal Development",
     "Songs And Rhythm",
     "Handwriting",
-    "Dictation"
+    "Dictation",
+    "Verbal Reasoning",
+    "Quantitative Reasoning"
   ],
 
   basic1: [
     "English Language",
     "Mathematics",
     "Basic Science",
+    "Basic Tech",
+    "Phonics",
+    "Yoruba",
     "Physical And Health Education",
     "Religion Studies",
     "Nigerian History",
     "Social And Citizenship Studies",
     "Cultural And Creative Art",
-    "Basic Digital Literacy",
-    "Prevocational Studies",
-    "French",
-    "Nigerian Language",
+    "Computer Science",
+    "Home-Economics",
+    "Agricultural Science",
+    "Civic Education",
+    "Verbal Reasoning",
+    "Quantitative Reasoning",
     "Dictation"
     
   ],
@@ -278,15 +298,20 @@ const defaultSubjects = {
    "English Language",
     "Mathematics",
     "Basic Science",
+    "Basic Tech",
+    "Phonics",
+    "Yoruba",
     "Physical And Health Education",
     "Religion Studies",
     "Nigerian History",
     "Social And Citizenship Studies",
     "Cultural And Creative Art",
-    "Basic Digital Literacy",
-    "Prevocational Studies",
-    "French",
-    "Nigerian Language",
+    "Computer Science",
+    "Home-Economics",
+    "Agricultural Science",
+    "Civic Education",
+    "Verbal Reasoning",
+    "Quantitative Reasoning",
     "Dictation"
   ],
 
@@ -294,15 +319,20 @@ const defaultSubjects = {
     "English Language",
     "Mathematics",
     "Basic Science",
+    "Basic Tech",
+    "Phonics",
+    "Yoruba",
     "Physical And Health Education",
     "Religion Studies",
     "Nigerian History",
     "Social And Citizenship Studies",
     "Cultural And Creative Art",
-    "Basic Digital Literacy",
-    "Prevocational Studies",
-    "French",
-    "Nigerian Language",
+    "Computer Science",
+    "Home-Economics",
+    "Agricultural Science",
+    "Civic Education",
+    "Verbal Reasoning",
+    "Quantitative Reasoning",
     "Dictation"
   ],
 
@@ -310,31 +340,41 @@ const defaultSubjects = {
    "English Language",
     "Mathematics",
     "Basic Science",
+    "Basic Tech",
+    "Phonics",
+    "Yoruba",
     "Physical And Health Education",
     "Religion Studies",
     "Nigerian History",
     "Social And Citizenship Studies",
     "Cultural And Creative Art",
-    "Basic Digital Literacy",
-    "Prevocational Studies",
-    "French",
-    "Nigerian Language",
+    "Computer Science",
+    "Home-Economics",
+    "Agricultural Science",
+    "Civic Education",
+    "Verbal Reasoning",
+    "Quantitative Reasoning",
     "Dictation"
   ],
 
   basic5: [
-   "English Language",
+  "English Language",
     "Mathematics",
     "Basic Science",
+    "Basic Tech",
+    "Phonics",
+    "Yoruba",
     "Physical And Health Education",
     "Religion Studies",
     "Nigerian History",
     "Social And Citizenship Studies",
     "Cultural And Creative Art",
-    "Basic Digital Literacy",
-    "Prevocational Studies",
-    "French",
-    "Nigerian Language",
+    "Computer Science",
+    "Home-Economics",
+    "Agricultural Science",
+    "Civic Education",
+    "Verbal Reasoning",
+    "Quantitative Reasoning",
     "Dictation"
   ],
 
@@ -343,23 +383,26 @@ const defaultSubjects = {
     "Physical And Health Education",
     "Business studies (BS)", "Social and citizenship studies", "Entrepreneurship",
     "Digital Technology", "Christian Religion Studies (CRS)",
-    "Cultural and creative Art (CCA)", "Nigeria History","Dictation", "Intermediate Science", "French"
+    "Cultural and creative Art (CCA)", "Nigeria History","Dictation", "Intermediate Science", "Computer Science", "Phonic", "Civic Education",
+     "Agricultural Science", "Security"
   ],
 
   jss2: [
-     "English Language", "Mathematics",
-    "Physical And Health Education",
-    "Business studies (BS)", "Social and citizenship studies", "Entrepreneurship",
-    "Digital Technology", "Christian Religion Studies (CRS)",
-    "Cultural and creative Art (CCA)", "Nigeria History","Dictation", "Intermediate Science", "French"
-  ],
-
-  jss3: [
     "English Language", "Mathematics",
     "Physical And Health Education",
     "Business studies (BS)", "Social and citizenship studies", "Entrepreneurship",
     "Digital Technology", "Christian Religion Studies (CRS)",
-    "Cultural and creative Art (CCA)", "Nigeria History","Dictation", "Intermediate Science", "French"
+    "Cultural and creative Art (CCA)", "Nigeria History","Dictation", "Intermediate Science", "Computer Science", "Phonic", "Civic Education",
+     "Agricultural Science", "Security"
+  ],
+
+  jss3: [
+   "English Language", "Mathematics",
+    "Physical And Health Education",
+    "Business studies (BS)", "Social and citizenship studies", "Entrepreneurship",
+    "Digital Technology", "Christian Religion Studies (CRS)",
+    "Cultural and creative Art (CCA)", "Nigeria History","Dictation", "Intermediate Science", "Computer Science", "Phonic", "Civic Education",
+     "Agricultural Science", "Security"
   ],
 
   sss1: [
@@ -2076,7 +2119,7 @@ function clearInputs() {
 // Get Next Class
 // ---------------------------
 function getNextClass(currentClass) {
-    const classes = ["preNursery","nursery 1","nursery 2","Prep-Grade","Grade 1","Grade 2","Grade 3","Grade 4","Grade 5","JSS 1","JSS 2","JSS 3","SSS 1","SSS 2","SSS 3"];
+    const classes = ["creche", "kg1", "kg2","nursery 1","nursery 2","Grade 1","Grade 2","Grade 3","Grade 4","Grade 5","JSS 1","JSS 2","JSS 3","SSS 1","SSS 2","SSS 3"];
     const index = classes.indexOf(currentClass);
     if (index >= 0 && index < classes.length - 1) return classes[index+1];
     if (index === classes.length - 1) return "Graduate";

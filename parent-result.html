@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Student Result | Life Point Academy</title>
+  <link rel="icon" type="image/png" href="assets/images/auth/First Point Logo.webp">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* ===============================
+   ROOT VARIABLES
+================================ */
+:root {
+  --primary: #b11226;
+  --primary-soft: #fbeaec;
+  --text-dark: #222;
+  --text-muted: #555;
+  --border: #ddd;
+  --bg-soft: #fafafa;
+}
+
+/* ===============================
+   GLOBAL
+================================ */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Calibri, system-ui, sans-serif;
+  margin: 16px;
+  color: var(--text-dark);
+  background: #fff;
+  line-height: 1.55;
+  position: relative;
+}
+
+/* Watermark */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("assets/images/auth/First Point Logo.webp") no-repeat center;
+  background-size: 35%;
+  opacity: 0.035;
+  z-index: -1;
+}
+
+/* ===============================
+   HEADER
+================================ */
+.header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 4px solid var(--primary);
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.header-left img {
+  width: 110px;
+  border: 3px solid var(--primary);
+  border-radius: 10px;
+  padding: 6px;
+  background: #fff;
+}
+
+.header-right {
+  text-align: right;
+  flex: 1;
+  min-width: 240px;
+}
+
+.header-right h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--primary);
+  text-transform: uppercase;
+}
+
+.header-right p {
+  margin: 2px 0;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Academic session bar */
+.session-bar {
+  margin-bottom: 18px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+/* ===============================
+   SECTIONS
+================================ */
+.section {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  background: var(--primary);
+  color: #fff;
+  padding: 6px 10px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.section-content {
+  padding: 10px 12px;
+  font-size: 12px;
+}
+
+/* ===============================
+   INFO GRIDS
+================================ */
+.info-boxes,
+.side-boxes {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.info-boxes .section,
+.side-boxes .section {
+  flex: 1;
+  min-width: 260px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 12px;
+}
+
+.info-grid strong {
+  color: var(--primary);
+}
+
+/* ===============================
+   TABLES
+================================ */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+th {
+  background: var(--primary);
+  color: #fff;
+  padding: 6px;
+  border: 1px solid #fff;
+  text-transform: uppercase;
+}
+
+td {
+  padding: 6px;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+
+tr:nth-child(even) td {
+  background: var(--bg-soft);
+}
+
+/* Uppercase subject names */
+#resultTable td:nth-child(2),
+#resultTable th:nth-child(2) {
+  text-transform: uppercase;
+}
+
+/* Grade tick */
+.grade-tick {
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 14px;
+}
+
+/* ===============================
+   SIGNATURES
+================================ */
+.signatures {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.sign {
+  width: 45%;
+  min-width: 220px;
+  text-align: center;
+}
+
+.signature-img {
+  width: 90px;
+  margin-bottom: 6px;
+}
+
+.signature-title {
+  border-top: 2px solid var(--primary);
+  padding-top: 6px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* ===============================
+   LOGOUT BUTTON
+================================ */
+.logout-wrap {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.logout-btn {
+  padding: 8px 22px;
+  font-size: 13px;
+  font-weight: 600;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  opacity: 0.9;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header-right {
+    text-align: center;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  table {
+    font-size: 11px;
+  }
+}
+
+/* ===============================
+   PRINT
+================================ */
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+  }
+
+  .logout-wrap {
+    display: none;
+  }
+
+  @page {
+    size: A4;
+    margin: 0.7cm;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-left">
+    <img src="assets/images/auth/First Point Logo.webp" alt="School Logo">
+  </div>
+
+  <div class="header-right">
+    <h2>LIFE POINT ACADEMY | TERM RESULT</h2>
+    <p>ODO-EJA, MALLAM-TOPE, OSOGBO, OSUN STATE</p>
+    <p>Email: Tpoint619@gmail.com</p>
+    <p>Tel: 08036972619, 07032733082</p>
+  </div>
+</div>
+
+<div class="session-bar">
+  Academic Session: <strong><span id="sessionYear"></span> 2025 - 2026</strong>
+</div>
+
+<!-- STUDENT INFO -->
+<div class="info-boxes">
+  <div class="section">
+    <div class="section-title">Student Information</div>
+    <div class="section-content info-grid" id="studentDetails"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Attendance & Physical Record</div>
+    <div class="section-content info-grid" id="attendanceDetails"></div>
+  </div>
+</div>
+
+<!-- RESULTS -->
+<div class="section">
+  <div class="section-title">Subjects and Scores</div>
+  <div class="section-content">
+    <table id="resultTable">
+      <thead>
+        <tr>
+          <th>S/N</th>
+          <th>Subject</th>
+          <th>CA1</th>
+          <th>CA2</th>
+          <th>Exam</th>
+          <th>Total</th>
+          <th>Grade</th>
+          <th>Remark</th>
+        </tr>
+      </thead>
+      <tbody id="resultTableBody"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- TOTAL & REMARKS -->
+<div class="side-boxes">
+  <div class="section">
+    <div class="section-title">Total Average Score</div>
+    <div class="section-content">
+      <p><strong>Total Marks:</strong> <span id="totalMarks">0</span></p>
+      <p><strong>Average Percentage:</strong> <span id="averageScore">0</span>%</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Remarks</div>
+    <div class="section-content">
+      <p><strong>Class Teacher:</strong> <span id="classTeacherRemark"></span></p>
+      <p><strong>Head Teacher:</strong> <span id="headTeacherRemark"></span></p>
+    </div>
+  </div>
+</div>
+
+
+<div class="section-title">Affective & Psychomotor</div>
+<table id="affectiveTable">
+  <thead>
+    <tr><th>Area</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th></tr>
+  </thead>
+  <tbody id="affectiveBody"></tbody>
+</table>
+
+<br>
+<br>
+<div class="section-title">System Grading</div>
+<table>
+  <thead>
+    <tr>
+      <th>Grade</th>
+      <th>Score Range</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+     <tr><td>A</td><td>85-100</td><td>Excellent</td></tr>
+    <tr><td>B</td><td>75-84</td><td>Very Good</td></tr>
+    <tr><td>C</td><td>55-74</td><td>Good</td></tr>
+    <tr><td>D</td><td>40-54</td><td>Average</td></tr>
+    <tr><td>E</td><td>0-40</td><td>Needs Improvement</td></tr>
+  </tbody>
+</table>
+
+
+
+<!-- SIGNATURES -->
+<div class="signatures">
+  <div class="sign">
+    <img id="classTeacherSignatureImg" class="signature-img">
+    <div class="signature-title">School Stamp</div>
+  </div>
+
+  <div class="sign">
+    <img id="proprietorSignatureImg" class="signature-img">
+    <div class="signature-title">Proprietor’s Signature</div>
+  </div>
+</div>
+
+<!-- LOGOUT -->
+<div class="logout-wrap">
+  <button class="logout-btn" id="logoutBtn">Logout</button>
+</div>
+
+<script type="module" src="assets/js/parent-result.js"></script>
+</body>
+</html>
