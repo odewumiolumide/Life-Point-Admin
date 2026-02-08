@@ -1,9 +1,9 @@
 import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-import { getDatabase, ref, get, child } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
 
 // Firebase Config
 const firebaseConfig = {
- apiKey: "AIzaSyDfsck2-qqK0QJNzUlUqGR3cUQlFgGQnxs",
+  apiKey: "AIzaSyDfsck2-qqK0QJNzUlUqGR3cUQlFgGQnxs",
   authDomain: "life-point-student-database.firebaseapp.com",
   databaseURL: "https://life-point-student-database-default-rtdb.firebaseio.com",
   projectId: "life-point-student-database",
@@ -13,7 +13,10 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = !getApps().length ? initializeApp(firebaseConfig, "cbtStudentApp") : getApp("cbtStudentApp");
+const app = !getApps().length
+  ? initializeApp(firebaseConfig, "cbtStudentApp")
+  : getApp("cbtStudentApp");
+
 const db = getDatabase(app);
 
 // Elements
@@ -23,7 +26,7 @@ const lastNameInput = document.getElementById("lastName");
 const studentClassInput = document.getElementById("studentClass");
 const msg = document.getElementById("msg");
 
-// ======================= LOGIN LOGIC ======================
+// LOGIN
 loginForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   msg.textContent = "";
@@ -37,23 +40,26 @@ loginForm.addEventListener("submit", async (e) => {
   }
 
   try {
-    const studentsSnap = await get(ref(db, "Students"));
-    if (!studentsSnap.exists()) {
-      msg.textContent = "No students found in the system!";
+    const snap = await get(ref(db, "Students"));
+    if (!snap.exists()) {
+      msg.textContent = "No students found!";
       return;
     }
 
-    const students = studentsSnap.val();
+    const students = snap.val();
     let found = false;
 
-    // Loop through all students to find a match
     for (let key in students) {
       const student = students[key];
-      if (student.name.toLowerCase() === fullName.toLowerCase() &&
-          student.studentClass.toLowerCase() === studentClass.toLowerCase()) {
+      if (
+        student.name.toLowerCase() === fullName.toLowerCase() &&
+        student.studentClass.toLowerCase() === studentClass.toLowerCase()
+      ) {
         found = true;
-       sessionStorage.setItem("studentKey", key);
-       sessionStorage.setItem("studentClass", student.studentClass);
+
+        sessionStorage.setItem("studentId", key);
+        sessionStorage.setItem("studentName", student.name);
+        sessionStorage.setItem("studentClass", student.studentClass);
 
         break;
       }
@@ -62,14 +68,13 @@ loginForm.addEventListener("submit", async (e) => {
     if (found) {
       msg.textContent = "Access granted! Redirecting...";
       setTimeout(() => {
-        window.location.href = "exam-page.html"; // Your exam page
+        window.location.href = "exam-page.html";
       }, 1000);
     } else {
-      msg.textContent = "Student not found! Access denied.";
+      msg.textContent = "Student not found!";
     }
-
-  } catch (error) {
-    console.error("Login Error:", error);
-    msg.textContent = "Something went wrong. Try again later.";
+  } catch (err) {
+    console.error(err);
+    msg.textContent = "Login error. Try again.";
   }
 });
