@@ -1,15 +1,14 @@
-import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+import { initializeApp, getApps, getApp } from
+  "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+import { getDatabase, ref, get } from
+  "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
 
-// Firebase Config
+/* ================= FIREBASE ================= */
 const config = {
   apiKey: "AIzaSyBkSadtJeOGUsBw_kbH5YXCeHrdcFTw_MU",
   authDomain: "cbt-exam-database.firebaseapp.com",
   databaseURL: "https://cbt-exam-database-default-rtdb.firebaseio.com",
   projectId: "cbt-exam-database",
-  storageBucket: "cbt-exam-database.firebasestorage.app",
-  messagingSenderId: "678605406017",
-  appId: "1:678605406017:web:cf5b9583795a99b0aeebc0"
 };
 
 const app = !getApps().length
@@ -17,74 +16,133 @@ const app = !getApps().length
   : getApp("cbtExamApp");
 
 const db = getDatabase(app);
+
+/* ================= ELEMENTS ================= */
 const tbody = document.getElementById("examResultsBody");
+const classFilter = document.getElementById("classFilter");
+const subjectFilter = document.getElementById("subjectFilter");
 
-async function loadExamResults() {
-  const resSnap = await get(ref(db, "ExamResults"));
+/* ================= STATE ================= */
+let EXAMS = {};
+let RESULTS = {};
+
+/* ================= INIT ================= */
+document.addEventListener("DOMContentLoaded", async () => {
   const examSnap = await get(ref(db, "Exam"));
+  const resultSnap = await get(ref(db, "ExamResults"));
 
-  if (!resSnap.exists() || !examSnap.exists()) {
-    tbody.innerHTML = "<tr><td colspan='8'>No results</td></tr>";
-    return;
-  }
+  EXAMS = examSnap.exists() ? examSnap.val() : {};
+  RESULTS = resultSnap.exists() ? resultSnap.val() : {};
 
-  const results = resSnap.val();
-  const exams = examSnap.val();
+  populateClassFilter();
+  renderTable();
+});
+
+/* ================= CLASS DROPDOWN ================= */
+function populateClassFilter() {
+  const classes = new Set();
+
+  Object.values(EXAMS).forEach(exam => {
+    if (exam.meta?.class) classes.add(exam.meta.class);
+  });
+
+  classFilter.innerHTML =
+    `<option value="">Select Class</option>` +
+    [...classes].map(c => `<option value="${c}">${c}</option>`).join("");
+}
+
+/* ================= SUBJECT DROPDOWN ================= */
+function populateSubjectFilter(selectedClass) {
+  const subjects = new Set();
+
+  Object.values(EXAMS).forEach(exam => {
+    if (
+      exam.meta?.class === selectedClass &&
+      exam.meta?.subject
+    ) {
+      subjects.add(exam.meta.subject);
+    }
+  });
+
+  subjectFilter.innerHTML =
+    `<option value="">Select Subject</option>` +
+    [...subjects].map(s => `<option value="${s}">${s}</option>`).join("");
+}
+
+/* ================= FILTER EVENTS ================= */
+classFilter.addEventListener("change", () => {
+  populateSubjectFilter(classFilter.value);
+  renderTable();
+});
+
+subjectFilter.addEventListener("change", renderTable);
+
+/* ================= MAIN TABLE ================= */
+function renderTable() {
+  const selectedClass = classFilter.value;
+  const selectedSubject = subjectFilter.value;
+
   let sn = 1;
   let rows = "";
 
-  for (const examId in results) {
-    const questions = exams[examId]?.questions || {};
+  for (const examId in RESULTS) {
+    const exam = EXAMS[examId];
+    if (!exam || !exam.meta) continue;
 
-    for (const studentId in results[examId]) {
-      const r = results[examId][studentId];
-      let correct = 0, wrong = 0;
+    const { class: examClass, subject } = exam.meta;
+
+    // 🔐 FILTER
+    if (selectedClass && examClass !== selectedClass) continue;
+    if (selectedSubject && subject !== selectedSubject) continue;
+
+    const questions = exam.questions || {};
+    const totalQ = Object.keys(questions).length;
+    const passMark = Math.ceil(totalQ * 0.5);
+
+    for (const studentId in RESULTS[examId]) {
+      const r = RESULTS[examId][studentId];
+      let correct = 0;
 
       for (const qId in questions) {
-        if (!r.answers[qId]) continue;
-        const letter = questions[qId].correctAnswer;
-        const text = questions[qId].options[
-          ["A","B","C","D"].indexOf(letter)
-        ];
-        if (r.answers[qId] === text) correct++;
-        else wrong++;
+        const ans = r.answers?.[qId];
+        if (!ans) continue;
+
+        const correctLetter = questions[qId].correctAnswer;
+        const correctText =
+          questions[qId].options[
+            ["A", "B", "C", "D"].indexOf(correctLetter)
+          ];
+
+        if (ans === correctText) correct++;
       }
+
+      const wrong = totalQ - correct;
+      const passed = correct >= passMark;
 
       rows += `
         <tr>
           <td>${sn++}</td>
-          <td>${examId}</td>
+          <td>${subject}</td>
           <td>${r.studentName || "Unknown"}</td>
-          <td>${Object.keys(questions).length}</td>
+          <td>${totalQ}</td>
           <td>${correct}</td>
           <td>${wrong}</td>
           <td>${correct}</td>
           <td>
-            <button class="btn btn-sm btn-primary"
-              onclick='viewResult(${JSON.stringify(r.answers)}, ${JSON.stringify(questions)})'>
-              View
-            </button>
+            <span class="badge ${passed ? "bg-success" : "bg-danger"}">
+              ${passed ? "Pass" : "Fail"}
+            </span>
           </td>
         </tr>
       `;
     }
   }
 
-  tbody.innerHTML = rows;
+  tbody.innerHTML =
+    rows ||
+    `<tr>
+      <td colspan="8" class="text-center text-danger">
+        No results found for this selection
+      </td>
+    </tr>`;
 }
-
-window.viewResult = (answers, questions) => {
-  let html = "";
-  for (const qId in questions) {
-    const letter = questions[qId].correctAnswer;
-    const correct = questions[qId].options[
-      ["A","B","C","D"].indexOf(letter)
-    ];
-    html += `<p><b>${qId}</b><br>
-      Your: ${answers[qId] || "None"}<br>
-      Correct: ${correct}</p>`;
-  }
-  alert(html.replace(/<[^>]+>/g, "\n"));
-};
-
-document.addEventListener("DOMContentLoaded", loadExamResults);

@@ -97,12 +97,14 @@
           <li>
             <a href="result-list.html"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i>Result List</a>
           </li>
-          <li>
-            <a href="admin-generate-pin.html"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i>
-              Generate Result Token</a>
-          </li>
+         
           <li>
             <a href="broadsheet.html"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Broadsheet List</a>
+          </li>
+
+           <li>
+            <a href="admin-generate-pin.html"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i>
+              Generate Result Token</a>
           </li>
         </ul>
       </li>
@@ -114,9 +116,6 @@
         </a>
         <ul class="sidebar-submenu">
 
-           <li>
-            <a href="result-table.html"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Result Table</a>
-          </li>
 
          <li>
             <a href="create exam.html"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Create Exam</a>
@@ -127,6 +126,9 @@
             <a href="table-exam.html"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Available Exams</a>
           </li>
           
+           <li>
+            <a href="result-table.html"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Result Table</a>
+          </li>
         </ul>
       </li>
 
@@ -139,7 +141,7 @@
         </a>
         <ul class="sidebar-submenu">
           <li>
-            <a href="staff-role.html"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Staff Role</a>
+            <a href="staff-role.html"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Add Staff Role</a>
           </li>
           
         </ul>
@@ -527,6 +529,32 @@
   </ul>
 </div>
     
+<div class="d-flex gap-3 mb-3 flex-wrap">
+
+  <!-- Class Filter -->
+  <select id="classFilter" class="form-select w-auto">
+    <option value="">Select Class</option>
+    <option value="Grade 1">Grade 1</option>
+    <option value="Grade 2">Grade 2</option>
+    <option value="Grade 3">Grade 3</option>
+    <option value="Grade 4">Grade 4</option>
+    <option value="Grade 5">Grade 5</option>
+    <option value="JSS 1">JSS 1</option>
+    <option value="JSS 2">JSS 2</option>
+    <option value="JSS 3">JSS 3</option>
+    <option value="SSS 1">SSS 1</option>
+    <option value="SSS 2">SSS 2</option>
+    <option value="SSS 3">SSS 3</option>
+  </select>
+
+  <!-- Subject Filter -->
+  <select id="subjectFilter" class="form-select w-auto">
+    <option value="">Select Subject</option>
+  </select>
+
+</div>
+
+
     <div class="card basic-data-table">
       <div class="card-header">
         <h5 class="card-title mb-0">Exam Result Table</h5>
