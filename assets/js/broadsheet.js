@@ -54,8 +54,8 @@ const defaultSubjects = {
   creche: ["Literacy", "Numeracy", "Health Habits",  "Social Habits", "Pre-Science","Handwriting", "Poem", "Songs And Rhythms", "Colouring/Drawing"],
   kg1: ["Literacy (Letter Work)", "Literacy (Language Domain)", "Numeracy", "Health Habits", "Social Habits", "Physical And Health Education", "Basic Science", "Civic Education", "Cultural And Creative Art", "Personal Development","Songs And Rhythm", "Handwriting", "Dictation"],
   kg2: ["Literacy (Letter Work)", "Literacy (Language Domain)", "Numeracy", "Health Habits", "Social Habits", "Physical And Health Education", "Basic Science", "Civic Education", "Cultural And Creative Art", "Personal Development","Songs And Rhythm", "Handwriting", "Dictation"],
-  prebasic1: ["Literacy (Letter Work)", "Literacy (Language Domain)", "Numeracy", "Health Habits", "Social Habits", "Physical And Health Education", "Basic Science", "Civic Education", "Cultural And Creative Art", "Personal Development","Songs And Rhythm", "Handwriting", "Dictation"],
-  prebasic2: ["Literacy (Letter Work)", "Literacy (Language Domain)", "Numeracy", "Health Habits", "Social Habits", "Physical And Health Education", "Basic Science", "Civic Education", "Cultural And Creative Art", "Personal Development","Songs And Rhythm", "Handwriting", "Dictation"],
+  nursery1: ["Literacy (Letter Work)", "Literacy (Language Domain)", "Numeracy", "Health Habits", "Social Habits", "Physical And Health Education", "Basic Science", "Civic Education", "Cultural And Creative Art", "Personal Development","Songs And Rhythm", "Handwriting", "Dictation"],
+  nursery2: ["Literacy (Letter Work)", "Literacy (Language Domain)", "Numeracy", "Health Habits", "Social Habits", "Physical And Health Education", "Basic Science", "Civic Education", "Cultural And Creative Art", "Personal Development","Songs And Rhythm", "Handwriting", "Dictation"],
   basic1: ["English Language", "Mathematics", "Basic Science", "Physical And Health Education", "Religion Studies","Nigerian History","Social And Citizenship Studies", "Cultural And Creative Art", "Basic Digital Literacy", "Prevocational Studies", "French", "Nigerian Language","Dictation"],
   basic2: ["English Language", "Mathematics", "Basic Science", "Physical And Health Education", "Religion Studies","Nigerian History","Social And Citizenship Studies", "Cultural And Creative Art", "Basic Digital Literacy", "Prevocational Studies", "French", "Nigerian Language","Dictation"],
   basic3: ["English Language", "Mathematics", "Basic Science", "Physical And Health Education", "Religion Studies","Nigerian History","Social And Citizenship Studies", "Cultural And Creative Art", "Basic Digital Literacy", "Prevocational Studies", "French", "Nigerian Language","Dictation"],
@@ -119,8 +119,8 @@ async function renderBroadsheet() {
   // -----------------------------
   const normClass = normalizeClass(classVal);
   const classMap = {
-     "creche":"creche", "kg1":"kg1", "kg2":"kg2","nusery1":"prebasic1","nursery1":"prebasic1",
-    "nusery2":"prebasic2","nursery2":"prebasic2",
+     "creche":"creche", "kg1":"kg1", "kg2":"kg2","nusery1":"prebasic1","nursery1":"nursery1",
+    "nusery2":"nursery2","nursery2":"nursery2",
     "grade1":"basic1","grade2":"basic2","grade3":"basic3","grade4":"basic4","grade5":"basic5",
     "jss1":"jss1","jss2":"jss2","jss3":"jss3","sss1":"sss1","sss2":"sss2","sss3":"sss3"
   };
