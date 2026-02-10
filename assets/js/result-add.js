@@ -276,7 +276,7 @@ const defaultSubjects = {
     "Religion Studies",
     "Nigerian History",
     "Handwriting",
-    "Security",
+    "Security Education",
     "Music",
     "French",
     "Social And Citizenship Studies",
