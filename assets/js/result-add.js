@@ -204,8 +204,7 @@ const defaultSubjects = {
     "Pre-Science",
     "Handwriting",
     "Poem",
-    "Songs And Rhythms",
-    "Colouring/Drawing"
+    "Songs And Rhythms"
     
   ],
 
@@ -217,8 +216,7 @@ const defaultSubjects = {
     "Pre-Science",
     "Handwriting",
     "Poem",
-    "Songs And Rhythms",
-    "Colouring/Drawing"
+    "Songs And Rhythms"
     
   ],
 
