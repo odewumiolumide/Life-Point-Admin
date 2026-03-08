@@ -2,12 +2,13 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 
-<!-- Mirrored from wowdash.wowtheme7.com/php/demo/table-data.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 18 Jan 2026 14:04:21 GMT -->
+<!-- Mirrored from wowdash.wowtheme7.com/php/demo/form-validation.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 18 Jan 2026 14:04:20 GMT -->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Life Point Academy | Admin Exam</title>
-  <link rel="icon" type="image/png" href="assets/images/auth/First Point Logo.webp" sizes="16x16">
+   <title> Life Point Academy | Admin Dashboard  </title>
+
+  <link rel="icon" type="image/png" href="assets/images/auth/First Point Logo.webp">
   <!-- remix icon font css  -->
   <link rel="stylesheet" href="assets/css/remixicon.css">
   <!-- BootStrap css -->
@@ -40,6 +41,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
   <body>
+
 
 <!--- Navbar Section Start-->
 
@@ -210,6 +212,7 @@
   </div>
 </aside>
 <!-- Navbar Sections Ends -->
+
 
 <main class="dashboard-main">
   <div class="navbar-header">
@@ -560,7 +563,7 @@
   <div class="dashboard-main-body">
 
     <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-24">
-  <h6 class="fw-semibold mb-0">Exam Result Table</h6>
+  <h6 class="fw-semibold mb-0">Smart Exam/Test Scheduler</h6>
   <ul class="d-flex align-items-center gap-2">
     <li class="fw-medium">
       <a href="index.html" class="d-flex align-items-center gap-1 hover-text-primary">
@@ -569,69 +572,96 @@
       </a>
     </li>
     <li>-</li>
-    <li class="fw-medium">Exam Result Table</li>
+    <li class="fw-medium">Smart Exam/Test Scheduler</li>
   </ul>
 </div>
     
-<div class="d-flex gap-3 mb-3 flex-wrap">
-
-  <!-- Class Filter -->
-  <select id="classFilter" class="form-select w-auto">
-    <option value="">Select Class</option>
-    <option value="Grade 1">Grade 1</option>
-    <option value="Grade 2">Grade 2</option>
-    <option value="Grade 3">Grade 3</option>
-    <option value="Grade 4">Grade 4</option>
-    <option value="Grade 5">Grade 5</option>
-    <option value="JSS 1">JSS 1</option>
-    <option value="JSS 2">JSS 2</option>
-    <option value="JSS 3">JSS 3</option>
-    <option value="SSS 1">SSS 1</option>
-    <option value="SSS 2">SSS 2</option>
-    <option value="SSS 3">SSS 3</option>
-  </select>
-
-  <!-- Subject Filter -->
-  <select id="subjectFilter" class="form-select w-auto">
-    <option value="">Select Subject</option>
-  </select>
-
-</div>
-
-
-    <div class="card basic-data-table">
+    <div class="row gy-4">
+  <div class="col-lg-12">
+    <div class="card">
       <div class="card-header">
-        <h5 class="card-title mb-0">Exam Result Table</h5>
       </div>
-     <div class="card-body">
-  <table class="table table-bordered text-nowrap">
-  <thead>
-    <tr>
-      <th scope="col">S.L</th>
-      <th scope="col">Subject Taken</th>
-      <th scope="col">Name</th>
-      <th scope="col"> Total Question</th>
-      <th scope="col">Correct Answer</th>
-      <th scope="col">Wrong Answer</th>
-      <th scope="col">Total Marks</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-  <tbody id="examResultsBody">
-    <tr>
-      <td colspan="6" class="text-center">Loading exam results...</td>
-    </tr>
-  </tbody>
-</table>
+      <div class="card-body">
 
+        <form id="timetableForm" class="row gy-3 needs-validation" novalidate>
 
+          <div class="col-md-6">
+      <label class="form-label">Schedule Name</label>
+      <input type="text" name="name" class="form-control" placeholder="Schedule Name" required>
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Academic Session</label>
+      <select class="form-select" name="session" required>
+        <option value="">Select Session</option>
+      <option value="2025/2026">2025/2026</option>
+                  <option value="2026/2027">2026/2027</option>
+                   <option value="2027/2028">2027/2028</option>
+                    <option value="2028/2029">2028/2029</option>
+                     <option value="2029/2030">2029/2030</option>
+      </select>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Term</label>
+      <select class="form-select" name="term" required>
+        <option value="">Select Term</option>
+        <option value="First Term">First Term</option>
+        <option value="Second Term">Second Term</option>
+        <option value="Third Term">Third Term</option>
+      </select>
+    </div>
+   
+    
+    <div class="col-md-6">
+      <label class="form-label">Recommended Duration (minutes)</label>
+      <input type="number" name="duration" class="form-control" placeholder="e.g., 60" required>
+    </div>
+  
+    <div class="col-md-6">
+      <label class="form-label">Max Papers Per Day</label>
+      <input type="number" name="maxPapers" class="form-control" placeholder="e.g., 2" required>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Exam Start Date</label>
+      <input type="date" name="startDate" class="form-control" required>
+    </div>
+     <div class="col-md-6">
+      <label class="form-label">Exam End Date</label>
+      <input type="date" name="endDate" class="form-control" required>
+    </div>
+
+   <div class="col-md-6">
+  <label class="form-label">Time Start</label>
+  <input type="time" name="startTime" class="form-control" required>
 </div>
-
-      
+<div class="col-md-6">
+  <label class="form-label">Time End</label>
+  <input type="time" name="endTime" class="form-control" required>
+</div>
+<div class="col-md-6">
+  <label class="form-label">Break Duration (mins)</label>
+  <input type="number" name="breakDuration" class="form-control" required>
+</div>
+    
+  <div class="col-md-6">
+      <label class="form-label">Public Holidays (comma-separated)</label>
+      <input type="text" name="holidays" class="form-control" placeholder="YYYY-MM-DD, YYYY-MM-DD">
+    </div>
+       <div class="col-md-6">
+      <label class="form-label">Reason</label>
+      <input type="text" name="holidays" class="form-control" placeholder="Reason">
+    </div> 
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit" id="generateBtn">Generate Timetable</button>
+    </div>
+  </form>
+      </div>
     </div>
   </div>
+</div>
+  </div>
 
-   <footer class="d-footer">
+  <footer class="d-footer">
   <div class="row align-items-center justify-content-between">
     <div class="col-auto">
       <p class="mb-0">© 2026 Life Point Academy. ALL RIGHTS RESERVED</p>
@@ -671,11 +701,31 @@
   
   <!-- main js -->
   <script src="assets/js/app.js"></script>
-  <script type="module" src="assets/js/result-table.js"></script>
 <script>
-  let table = new DataTable('#dataTable');
+  (() => {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+  })()
 </script>
+
+
+<script type="module" src="assets/js/time-table.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
 </body>
 
-<!-- Mirrored from wowdash.wowtheme7.com/php/demo/table-data.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 18 Jan 2026 14:04:21 GMT -->
+<!-- Mirrored from wowdash.wowtheme7.com/php/demo/form-validation.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 18 Jan 2026 14:04:20 GMT -->
 </html>
