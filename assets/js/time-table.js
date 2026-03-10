@@ -91,7 +91,7 @@ basic1: [
 
 basic2: [
   "Mathematics","Cultural And Creative Art","English Language","Physical And Health Education",
-  "Basic Science & Tech","French","Computer Science","Yoruba",
+  "Basic Science & Tech","Computer Science","Yoruba",
   "Prevocational Studies","Religion Studies","Phonics","Nigerian History",
   "Social And Citizenship Studies","Verbal Reasoning","Dictation","Quantitative Reasoning"
 ],
