@@ -197,232 +197,106 @@ function loadDefaultSubjectsForClass(studentClass) {
 const defaultSubjects = {
 
   creche: [
-    "Literacy",
     "Numeracy",
-    "Health Habits",
-    "Social Habits",
-    "Pre-Science",
-    "Handwriting",
-    "Poem",
-    "Songs And Rhythms"
+    "Songs And Rhythms",
+    "Literacy",
+    "Music",
+  "Pre-Science",
+  "Poem",
+  "Handwriting",
+  "Health Habits",
+  "Social Habits"
     
   ],
 
    kg1: [
-    "Literacy",
-    "Numeracy",
-    "Health Habits",
-    "Social Habits",
-    "Pre-Science",
-    "Handwriting",
-    "Poem",
-    "Songs And Rhythms"
+   "Numeracy","Songs And Rhythms","Literacy","Music",
+  "Pre-Science","Poem","Handwriting","Health Habits","Social Habits"
     
   ],
 
    kg2: [
-    "Literacy",
-    "Literacy (Language Domain)",
-    "Numeracy",
-    "Civic Education",
-    "Health Habits",
-    "Social Habits",
-    "Pre-Science",
-    "Handwriting",
-    "Poem",
-    "Songs And Rhythms",
-    "Creativity",
-    "Personal Development",
-    "Physical And Health Education",
-    "Basic Science & Tech",
-    "Religion Studies",
-    "Verbal Reasoning",
-    "Quantitative Reasoning",
-    "Colouring/Drawing"
+    "Numeracy","Creativity","Literacy","Colouring/Drawing",
+  "Basic Science & Tech","Songs And Rhythms","Literacy (Language Domain)","Music",
+  "Physical And Health Education","Poem","Verbal Reasoning","Personal Development",
+  "Quantitative Reasoning","Civic Education","Handwriting","Religion Studies",
+  "Pre-Science","Health Habits","Social Habits"
     
   ],
 
   nursery1: [
-    "Literacy (Letter Work)",
-    "Literacy (Language Domain)",
-    "Numeracy",
-    "Health Habits",
-    "Social Habits",
-    "Physical And Health Education",
-    "Basic Science & Tech",
-    "Civic Education",
-    "Cultural And Creative Art",
-    "Personal Development",
-    "Songs And Rhythm",
-    "Handwriting",
-    "Dictation",
-    "Creativity",
-    "Poem",
-    "Verbal Reasoning",
-    "Quantitative Reasoning"
+    "Numeracy","Creativity","Literacy (Letter Work)","Music",
+  "Basic Science & Tech","Poem","Literacy (Language Domain)","Cultural And Creative Art",
+  "Physical And Health Education","Religion Studies","Verbal Reasoning","Personal Development",
+  "Quantitative Reasoning","Social And Citizenship Studies","Handwriting","Dictation",
+  "Health Habits","Social Habits"
     
   ],
 
   nursery2: [
-    "English Language",
-    "Mathematics",
-    "Basic Science",
-    "Basic Tech",
-    "Phonics",
-    "Yoruba",
-    "Physical And Health Education",
-    "Religion Studies",
-    "Nigerian History",
-    "Handwriting",
-    "Security Education",
-    "Music",
-    "French",
-    "Social And Citizenship Studies",
-    "Cultural And Creative Art",
-    "Computer Science",
-    "Home-Economics",
-    "Agricultural Science",
-    "Civic Education",
-    "Verbal Reasoning",
-    "Quantitative Reasoning",
-    "Dictation"
+    "Mathematics","Music","English Language","Cultural And Creative Art",
+  "Basic Science","Computer Science","Yoruba",
+  "Prevocational Studies (PVS)","Phonics","Religion Studies",
+  "Nigerian History","Social And Citizenship Studies",
+  "Physical And Health Education","Verbal Reasoning","Quantitative Reasoning",
+  "Dictation","Handwriting"
   ],
 
   basic1: [
-    "English Language",
-    "Mathematics",
-    "Basic Science",
-    "Basic Tech",
-    "Phonics",
-    "Yoruba",
-    "Physical And Health Education",
-    "Religion Studies",
-    "Nigerian History",
-    "Handwriting",
-    "Security",
-    "Music",
-    "French",
-    "Social And Citizenship Studies",
-    "Cultural And Creative Art",
-    "Computer Science",
-    "Home-Economics",
-    "Agricultural Science",
-    "Civic Education",
-    "Verbal Reasoning",
-    "Quantitative Reasoning",
-    "Dictation"
+     "Mathematics","Cultural And Creative Art","English Language","Physical And Health Education",
+  "Basic Science & Tech","Yoruba","Computer Science","Religion Studies",
+  "Prevocational Studies (PVS)","Nigerian History","Phonics","Social And Citizenship Studies",
+  "Verbal Reasoning","Dictation","Quantitative Reasoning"
     
   ],
 
   basic2: [
-   "English Language",
-    "Mathematics",
-    "Basic Science",
-    "Basic Tech",
-    "Phonics",
-    "Yoruba",
-    "Physical And Health Education",
-    "Religion Studies",
-    "Nigerian History",
-    "Social And Citizenship Studies",
-    "Cultural And Creative Art",
-    "Computer Science",
-    "Home-Economics",
-    "Agricultural Science",
-    "Civic Education",
-    "Verbal Reasoning",
-    "Quantitative Reasoning",
-    "Dictation"
+   "Mathematics","Cultural And Creative Art","English Language","Physical And Health Education",
+  "Basic Science & Tech","Computer Science","Yoruba",
+  "Prevocational Studies (PVS)","Religion Studies","Phonics","Nigerian History",
+  "Social And Citizenship Studies","Verbal Reasoning","Dictation","Quantitative Reasoning"
   ],
 
   basic3: [
-    "English Language",
-    "Mathematics",
-    "Basic Science",
-    "Basic Tech",
-    "Phonics",
-    "Yoruba",
-    "Physical And Health Education",
-    "Religion Studies",
-    "Nigerian History",
-    "Social And Citizenship Studies",
-    "Cultural And Creative Art",
-    "Computer Science",
-    "Home-Economics",
-    "Agricultural Science",
-    "Civic Education",
-    "Verbal Reasoning",
-    "Quantitative Reasoning",
-    "Dictation"
+    "Mathematics", "Physical And Health Education", "English Language",
+  "Basic Science & Tech","Cultural And Creative Art","Computer Science","Yoruba",
+  "Prevocational Studies (PVS)","Religion Studies","Phonics","Nigerian History",
+  "Social And Citizenship Studies","Verbal Reasoning","Dictation","Quantitative Reasoning"
   ],
 
   basic4: [
-   "English Language",
-    "Mathematics",
-    "Basic Science",
-    "Basic Tech",
-    "Phonics",
-    "Yoruba",
-    "Physical And Health Education",
-    "Religion Studies",
-    "Nigerian History",
-    "Social And Citizenship Studies",
-    "Cultural And Creative Art",
-    "Computer Science",
-    "Home-Economics",
-    "Agricultural Science",
-    "Civic Education",
-    "Verbal Reasoning",
-    "Quantitative Reasoning",
-    "Dictation"
+   "Mathematics","Physical And Health Education", "English Language",
+  "Basic Science & Tech","Cultural And Creative Art","Computer Science","Yoruba",
+  "Prevocational Studies (PVS)","Religion Studies","Phonics","Nigerian History",
+  "Social And Citizenship Studies","Verbal Reasoning","Dictation","Quantitative Reasoning"
   ],
 
   basic5: [
-  "English Language",
-    "Mathematics",
-    "Basic Science",
-    "Basic Tech",
-    "Phonics",
-    "Yoruba",
-    "Physical And Health Education",
-    "Religion Studies",
-    "Nigerian History",
-    "Social And Citizenship Studies",
-    "Cultural And Creative Art",
-    "Computer Science",
-    "Home-Economics",
-    "Agricultural Science",
-    "Civic Education",
-    "Verbal Reasoning",
-    "Quantitative Reasoning",
-    "Dictation"
+  "Mathematics", "Physical And Health Education", "English Language","Physical And Health Education",
+  "Basic Science & Tech","Cultural And Creative Art","Computer Science","Yoruba",
+  "Prevocational Studies (PVS)","Religion Studies","Phonics","Nigerian History",
+  "Social And Citizenship Studies","Verbal Reasoning","Dictation","Quantitative Reasoning"
   ],
 
   jss1: [
-    "English Language", "Mathematics",
-    "Physical And Health Education",
-    "Business studies (BS)", "Social and citizenship studies", "Entrepreneurship",
-    "Digital Technology", "Christian Religion Studies (CRS)",
-    "Cultural and creative Art (CCA)", "Nigeria History","Dictation", "Intermediate Science", "Computer Science", "Phonic", "Civic Education",
-     "Agricultural Science", "Security"
+     "Mathematics","Cultural and creative Art (CCA)","English Language","Physical And Health Education",
+  "Intermediate Science","Business studies (BS)","Computer Science","Christian Religion Studies (CRS)",
+  "Prevocational Studies (PVS)","Entrepreneurship","Digital Technology",
+  "Nigeria History","Social and Citizenship studies","Phonic","Dictation"
   ],
 
   jss2: [
-    "English Language", "Mathematics",
-    "Physical And Health Education",
-    "Business studies (BS)", "Social and citizenship studies", "Entrepreneurship",
-    "Digital Technology", "Christian Religion Studies (CRS)",
-    "Cultural and creative Art (CCA)", "Nigeria History","Dictation", "Intermediate Science", "Computer Science", "Phonic", "Civic Education",
-     "Agricultural Science", "Security"
+      "Mathematics","Cultural and creative Art (CCA)","English Language","Physical And Health Education",
+  "Intermediate Science","Business studies (BS)","Computer Science","Christian Religion Studies (CRS)",
+  "Prevocational Studies (PVS)","Entrepreneurship","Digital Technology",
+  "Nigeria History","Social and Citizenship studies","Phonic","Dictation"
   ],
 
   jss3: [
-   "English Language", "Mathematics",
-    "Physical And Health Education",
-    "Business studies (BS)", "Social and citizenship studies", "Entrepreneurship",
-    "Digital Technology", "Christian Religion Studies (CRS)",
-    "Cultural and creative Art (CCA)", "Nigeria History","Dictation", "Intermediate Science", "Computer Science", "Phonic", "Civic Education",
-     "Agricultural Science", "Security"
+   "Mathematics","Cultural and creative Art (CCA)","English Language","Physical And Health Education",
+  "Intermediate Science","Business studies (BS)","Computer Science","Christian Religion Studies (CRS)",
+  "Prevocational Studies (PVS)","Entrepreneurship","Digital Technology",
+  "Nigeria History","Social and Citizenship studies","Phonic","Dictation"
   ],
 
   sss1: [
