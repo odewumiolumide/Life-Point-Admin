@@ -46,6 +46,26 @@
   overflow-y: auto;
 }
 
+.class-filter-box{
+  width: 220px;      /* medium width */
+  max-width: 100%;   /* prevents overflow */
+  margin-bottom: 12px;
+}
+
+.class-filter-box label{
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.class-filter{
+  width: 100%;
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 6px;
+}
+
 </style>
   <body>
 
@@ -586,6 +606,35 @@
         <h5 class="card-title mb-0">Available Exams</h5>
       </div>
 
+     <div class="mb-3">
+  <label>Select Class</label>
+  <select id="classFilter" class="form-select">
+    <option value="All">All Classes</option>
+
+    <option value="Creche">Creche</option>
+    <option value="KG1">KG1</option>
+    <option value="KG2">KG2</option>
+    <option value="Nursery 1">Nursery 1</option>
+    <option value="Nursery 2">Nursery 2</option>
+
+    <option value="Grade 1">Grade 1</option>
+    <option value="Grade 2">Grade 2</option>
+    <option value="Grade 3">Grade 3</option>
+    <option value="Grade 4">Grade 4</option>
+    <option value="Grade 5">Grade 5</option>
+
+    <option value="JSS 1">JSS 1</option>
+    <option value="JSS 2">JSS 2</option>
+    <option value="JSS 3">JSS 3</option>
+
+    <option value="SSS 1">SSS 1</option>
+    <option value="SSS 2">SSS 2</option>
+    <option value="SSS 3">SSS 3</option>
+  </select>
+</div>
+
+  <br>
+  
       <div class="card-body">
       <div class="table-responsive" style="overflow-x:auto;">
   <table class="table table-bordered text-nowrap">

@@ -714,13 +714,25 @@
     </select>
   </div>
 
+   <!-- Bulk Upload -->
+  <div class="mb-20">
+    <label class="form-label fw-semibold text-sm mb-8">
+      Bulk Upload Questions
+    </label>
+    <textarea id="bulkQuestions" class="form-control mb-2" rows="10" 
+      placeholder="Format: Question | OptionA | OptionB | OptionC | OptionD | CorrectOption (A/B/C/D)">
+    </textarea>
+    <button id="parseBulkBtn" class="btn btn-outline-primary mb-3">Parse & Add Questions</button>
+    <small class="text-muted">Use <strong>|</strong> to separate question, options and correct answer.</small>
+  </div>
+
   <div id="questionsContainer"></div>
 
-  <div class="text-center mt-20">
+<!-- <div class="text-center mt-20">
     <button id="addQuestionBtn" class="btn btn-outline-primary px-40">
        ADD NEW QUESTION
     </button>
-  </div>
+  </div> -->
 
   <div class="text-center mt-20 d-flex justify-content-center gap-3">
   <button id="saveDraftBtn" class="btn btn-secondary px-30">

@@ -104,10 +104,10 @@ basic3: [
 ],
 
 basic4: [
-  "Mathematics","Physical And Health Education", "English Language",
+  "English Language", "Physical And Health Education", 
   "Basic Science & Tech","Cultural And Creative Art","Computer Science","Yoruba",
   "Prevocational Studies (PVS)","Religion Studies","Phonics","Nigerian History",
-  "Social And Citizenship Studies","Verbal Reasoning","Dictation","Quantitative Reasoning"
+  "Social And Citizenship Studies","Verbal Reasoning","Dictation", "Quantitative Reasoning",  "Mathematics"
 ],
 
 basic5: [

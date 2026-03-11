@@ -36,20 +36,34 @@ async function fetchExams() {
 
 /* ================= RENDER TABLE ================= */
 async function renderExamTable() {
+
   const exams = await fetchExams();
+  const selectedClass = document.getElementById("classFilter").value;
+
   testTableBody.innerHTML = "";
 
-  Object.keys(exams).forEach((key, i) => {
+  let index = 1;
+
+  Object.keys(exams).forEach((key) => {
+
     const exam = exams[key];
+
+    // FILTER LOGIC
+    if (selectedClass !== "All" && exam.meta.class !== selectedClass) {
+      return;
+    }
+
     const status = exam.meta.status;
 
     const row = document.createElement("tr");
+
     row.innerHTML = `
-      <td>${i + 1}</td>
+      <td>${index++}</td>
       <td>${exam.meta.title}</td>
       <td>${exam.meta.subject}</td>
       <td>${exam.meta.class}</td>
       <td>${exam.meta.dateAssigned}</td>
+
       <td>
         <span class="badge ${
           status === "Published" ? "bg-success" :
@@ -57,21 +71,27 @@ async function renderExamTable() {
           "bg-warning"
         }">${status}</span>
       </td>
+
       <td>
         <button class="btn btn-sm btn-info viewBtn" data-key="${key}">View</button>
-        <button class="btn btn-sm btn-warning editBtn" data-key="${key}">Edit</button>
+
+        <button class="btn btn-sm btn-warning editBtn" data-key="${key}">
+        Edit</button>
+
         <button
           class="btn btn-sm btn-secondary linkBtn"
           data-examid="${key}"
           data-status="${status}"
           ${status !== "Published" ? "disabled" : ""}
         >Link</button>
+
         <button class="btn btn-sm btn-danger deleteBtn" data-key="${key}">
-          Delete
-        </button>
+        Delete</button>
       </td>
     `;
+
     testTableBody.appendChild(row);
+
   });
 }
 
@@ -244,5 +264,9 @@ document.addEventListener("DOMContentLoaded", () => {
   editModal = new bootstrap.Modal(document.getElementById("editExamModal"));
   deleteModal = new bootstrap.Modal(document.getElementById("deleteExamModal"));
   linkModal = new bootstrap.Modal(document.getElementById("linkExamModal"));
+  renderExamTable();
+});
+
+document.getElementById("classFilter").addEventListener("change", () => {
   renderExamTable();
 });
