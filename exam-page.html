@@ -90,6 +90,22 @@
     background: #16306b;
   }
 
+  .btn-logout {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff4d4d; /* red button */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s;
+}
+
+.btn-logout:hover {
+    background-color: #e60000; /* darker red on hover */
+}
+
   /* MOBILE */
   @media (max-width: 768px) {
     .table {
@@ -144,6 +160,9 @@
         Start Selected Exam
       </button>
     </div>
+
+  <!-- Button link -->
+<a href="/exam-login.html" class="btn-logout">Logout Student</a>
   </div>
 
 </div>
