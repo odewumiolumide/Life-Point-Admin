@@ -693,7 +693,7 @@ async function loadPreviousResults() {
     const snapshot = await get(ref(resultDb, `Results/${studentID}/${term}`));
 
     if (snapshot.exists()) {
-      // Only clear table when actual saved results exist
+      // ✅ LOAD SAVED DATA (READ-ONLY MODE)
       tbody.innerHTML = "";
 
       const data = snapshot.val();
@@ -701,6 +701,7 @@ async function loadPreviousResults() {
 
       Object.keys(subjects).forEach(sub => {
         const s = subjects[sub];
+
         addSubjectRow(
           s.subject || sub,
           s.ca1 || 0,
@@ -709,30 +710,21 @@ async function loadPreviousResults() {
           s.total || 0,
           s.grade || "-",
           s.remark || "-",
-          true
+          true // 🔒 disable editing (saved result)
         );
       });
 
-       document.getElementById("classTeacherRemark").value = data.classTeacherRemark || "";
+      // Fill other fields
+      document.getElementById("classTeacherRemark").value = data.classTeacherRemark || "";
       document.getElementById("headTeacherRemark").value = data.headTeacherRemark || "";
-      document.getElementById("Neatness").value = data.Neatness || "";
-      document.getElementById("Politeness").value = data.Politeness || "";
-      document.getElementById("Punctuality").value = data.Punctuality || "";
-      document.getElementById("Cooperation").value = data.Cooperation || "";
-      document.getElementById("Emotional").value = data.Emotional || "";
-      document.getElementById("Leadership").value = data.Leadership || "";
-      document.getElementById("Health").value = data.Health || "";
-      document.getElementById("Attitude").value = data.Attitude || "";
-      document.getElementById("Attentiveness").value = data.Attentiveness || "";
-      document.getElementById("Preservance").value = data.Preservance || "";
-      document.getElementById("Handwriting").value = data.Handwriting || "";
-      document.getElementById("Verbal").value = data.Verbal || "";
-      document.getElementById("Games").value = data.Games || "";
-      document.getElementById("Sport").value = data.Sport || "";
-      document.getElementById("Handlings").value = data.Handlings || "";
-      document.getElementById("Drawing").value = data.Drawing || "";
-      document.getElementById("Musical").value = data.Musical || "";
 
+      [
+        "Neatness","Politeness","Punctuality","Cooperation","Emotional",
+        "Leadership","Health","Attitude","Attentiveness","Preservance",
+        "Handwriting","Verbal","Games","Sport","Handlings","Drawing","Musical"
+      ].forEach(id => {
+        document.getElementById(id).value = data[id] || "";
+      });
 
       document.getElementById("daysOpened").value = data.daysOpened || "";
       document.getElementById("daysPresent").value = data.daysPresent || "";
@@ -744,11 +736,57 @@ async function loadPreviousResults() {
       showNotification("✅ Loaded previous results!", true);
 
     } else {
-      // DO NOT CLEAR THE TABLE HERE
-      // DO NOT REMOVE DEFAULT SUBJECTS
+      // ✅ NEW TERM MODE (KEEP SUBJECTS, CLEAR EVERYTHING ELSE)
 
-      showNotification("ℹ️ No previous result found.", false);
+      Array.from(tbody.querySelectorAll("tr")).forEach(tr => {
+
+        // Clear CA inputs
+        tr.querySelectorAll(".ca-input").forEach(input => input.value = "");
+
+        // Clear exam
+        const examInput = tr.querySelector(".exam-input");
+        if (examInput) examInput.value = "";
+
+        // Reset total, grade, remark
+        tr.querySelector(".total-score").textContent = "0";
+        tr.querySelector(".grade").textContent = "-";
+        tr.querySelector(".remark").textContent = "-";
+
+        // ✅ ENABLE editing + REMOVE BUTTON
+        tr.querySelectorAll("input, select").forEach(el => {
+          el.removeAttribute("readonly");
+        });
+
+        const actionCell = tr.lastElementChild;
+        if (actionCell && !actionCell.querySelector(".remove-row")) {
+          actionCell.innerHTML = '<button class="btn btn-danger btn-sm remove-row">✕</button>';
+        }
+      });
+
+      // Clear remarks
+      document.getElementById("classTeacherRemark").value = "";
+      document.getElementById("headTeacherRemark").value = "";
+
+      // Clear affective
+      [
+        "Neatness","Politeness","Punctuality","Cooperation","Emotional",
+        "Leadership","Health","Attitude","Attentiveness","Preservance",
+        "Handwriting","Verbal","Games","Sport","Handlings","Drawing","Musical"
+      ].forEach(id => {
+        document.getElementById(id).value = "";
+      });
+
+      // Clear attendance
+      document.getElementById("daysOpened").value = "120";
+      document.getElementById("daysPresent").value = "";
+      document.getElementById("daysAbsent").value = "";
+      document.getElementById("studentHeight").value = "";
+      document.getElementById("studentWeight").value = "";
+      document.getElementById("nextTermDate").value = "";
+
+      showNotification("ℹ️ No previous result found", true);
     }
+
   } catch (err) {
     console.error(err);
     showNotification("⚠️ Failed to load results: " + err.message, false);
@@ -983,10 +1021,25 @@ document.getElementById("headTeacherRemark").value = headRemarkAuto;
 
 <style>
 :root {
-  --primary: #b11226;
-  --secondary: #222;
-  --border-soft: #ddd;
-  --light-bg: #fafafa;
+  /* ===============================
+     COLORS
+  ================================ */
+  --primary: #1E40AF;       /* Royal Blue – main color */
+  --primary-dark: #1E3A8A;  /* Darker Blue – headings/buttons hover */
+  --primary-light: #DBEAFE; /* Light Blue – subtle backgrounds */
+
+  --accent: #DC2626;        /* Red – highlights, grades */
+  --accent-dark: #B91C1C;   /* Dark Red – hover/emphasis */
+
+  --highlight: #07660c;     /* Gold/Orange – addresses, email, details */
+  --highlight-dark: #09b426; /* Darker gold for hover or emphasis */
+
+  --text-main: #111827;     /* Main text color */
+  --text-light: #6B7280;    /* Secondary text/gray */
+
+  --white: #FFFFFF;
+  --border-soft: #E5E7EB;
+  --bg-light: #F9FAFB;      /* Soft background */
 }
 
 /* ===============================
@@ -995,9 +1048,9 @@ document.getElementById("headTeacherRemark").value = headRemarkAuto;
 body {
   font-family: "Segoe UI", Calibri, sans-serif;
   margin: 20px;
-  color: var(--secondary);
+  color: var(--text-main);
   line-height: 1.5;
-  background: #fff;
+  background: var(--white);
   position: relative;
 }
 
@@ -1036,16 +1089,20 @@ body::before {
 }
 
 .header-right h2 {
-  margin: 0;
+   align-items: center;
+  margin: 3px 0;
   font-size: 26px;
   font-weight: 900;
   color: var(--primary);
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .header-right p {
   margin: 2px 0;
   font-size: 12px;
+  color: var(--accent-dark);
+  font-weight: 600;
 }
 
 /* Academic session strip */
@@ -1055,8 +1112,10 @@ body::before {
   font-weight: 700;
   text-align: center;
   padding: 5px;
-  background: #f7f7f7;
+  background: var(--primary-light);
   border: 1px solid var(--border-soft);
+  color: var(--highlight-dark);
+  border-radius: 4px;
 }
 
 /* ===============================
@@ -1074,13 +1133,13 @@ body::before {
   min-width: 260px;
   border: 1px solid var(--border-soft);
   border-radius: 8px;
-  background: #fff;
+  background: var(--bg-light);
   overflow: hidden;
 }
 
 .section-title {
   background: var(--primary);
-  color: #fff;
+  color: var(--white);
   padding: 6px 10px;
   font-size: 13px;
   font-weight: 700;
@@ -1092,6 +1151,10 @@ body::before {
   font-size: 12px;
 }
 
+.session-bar{
+color: var(--highlight);
+}
+
 .info-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1100,6 +1163,14 @@ body::before {
 
 .info-grid div strong {
   color: var(--primary);
+}
+
+/* Address/details sections with highlight color */
+.address p,
+.details p {
+  color: var(--accent-dark);
+  font-weight: 600;
+  margin: 2px 0;
 }
 
 /* ===============================
@@ -1114,7 +1185,7 @@ table {
 
 th {
   background: var(--primary);
-  color: #fff;
+  color: var(--white);
   font-size: 12px;
   padding: 6px;
   border: 1px solid #fff;
@@ -1127,11 +1198,11 @@ td {
 }
 
 tr:nth-child(even) td {
-  background: #fafafa;
+  background: var(--primary-light);
 }
 
 .grade-tick {
-  color: var(--primary);
+  color: var(--accent);
   font-size: 14px;
 }
 
