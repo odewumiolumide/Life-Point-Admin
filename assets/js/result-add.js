@@ -548,7 +548,7 @@ document.getElementById("saveResult").addEventListener("click", () => {
   });
 
   if (invalidGrade) {
-    return alert("❌ Cannot save. Some grade inputs are invalid!");
+    return alert("Please ensure all grades are entered correctly (A–F). If correct, kindly click OK.");
   }
 
   // SAVE LOGIC HERE...
