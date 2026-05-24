@@ -177,6 +177,18 @@ button:hover{
   text-align:center;
 }
 
+.input-group select {
+  width: 100%;
+  padding: 12px 45px 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+  background: #fff;
+  appearance: none;
+  cursor: pointer;
+}
+
 /* RESPONSIVE */
 @media(max-width:900px){
   .exam-wrapper{
@@ -218,19 +230,38 @@ button:hover{
 
     <form id="loginForm">
       <div class="input-group">
-        <input id="firstName" type="text" placeholder="First Name" required>
+        <input id="firstName" type="text" placeholder="Student Surname" required>
         <i class="fa-solid fa-user"></i>
       </div>
 
       <div class="input-group">
-        <input id="lastName" type="text" placeholder="Last Name" required>
+        <input id="lastName" type="text" placeholder="Student First Name" required>
         <i class="fa-solid fa-user"></i>
       </div>
 
-      <div class="input-group">
-        <input id="studentClass" type="text" placeholder="Class (e.g. JSS2A)" required>
-        <i class="fa-solid fa-school"></i>
-      </div>
+     <div class="input-group">
+  <select id="studentClass" required>
+    <option value="">Select Class</option>
+                  <option>Creche</option>
+                  <option>KG1</option>
+                  <option>KG2</option>
+                  <option>Nursery 1</option>
+                  <option>Nursery 2</option>
+                  <option>Grade 1</option>
+                  <option>Grade 2</option>
+                  <option>Grade 3</option>
+                  <option>Grade 4</option>
+                  <option>Grade 5</option>
+                  <option>JSS 1</option>
+                  <option>JSS 2</option>
+                  <option>JSS 3</option>
+                <!-- <option>SSS 1</option>
+                  <option>SSS 2</option>
+                  <option>SSS 3</option> -->
+  </select>
+
+  <i class="fa-solid fa-school"></i>
+</div>
 
       <button type="submit">Start Exam</button>
     </form>
