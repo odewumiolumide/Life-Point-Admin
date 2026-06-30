@@ -271,6 +271,27 @@ jss3: [
   "Digital Technology",
   "Phonic",
   "Dictation"
+],
+
+sss1: [
+  "General Mathematics","Visual Arts","English Language","Christian Religious studies",
+  "Physics","Marketing","Chemistry","Commerce",
+  "Biology","Literature-in-English","Government","Digital Technology",
+  "Economics","Entrepreneurship","Accounting"
+],
+
+sss2: [
+  "General Mathematics","Visual Arts","English Language","Christian Religious studies",
+  "Physics","Marketing","Chemistry","Commerce",
+  "Biology","Literature-in-English","Government","Digital Technology",
+  "Economics","Entrepreneurship","Accounting"
+],
+
+sss3: [
+  "General Mathematics","Visual Arts","English Language","Christian Religious studies",
+  "Physics","Marketing","Chemistry","Commerce",
+  "Biology","Literature-in-English","Government","Digital Technology",
+  "Economics","Entrepreneurship","Accounting"
 ]
 };
 
