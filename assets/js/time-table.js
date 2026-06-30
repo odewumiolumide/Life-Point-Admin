@@ -129,7 +129,6 @@ nursery2: [
   "Phonics",
   "Verbal Reasoning",
   "Quantitative Reasoning",
-  "Yoruba",
   "Prevocational Studies (PVS)",
   "Handwriting",
   "Dictation"
@@ -141,7 +140,6 @@ basic1: [
   "Religion Studies",
   "Physical And Health Education",
   "Cultural And Creative Art",
-  "Yoruba",
   "Computer Science",
   "Prevocational Studies (PVS)",
   "Basic Science & Tech",
@@ -159,7 +157,6 @@ basic2: [
   "Religion Studies",
   "Physical And Health Education",
   "Cultural And Creative Art",
-  "Yoruba",
   "Computer Science",
   "Prevocational Studies (PVS)",
   "Basic Science & Tech",
@@ -177,7 +174,6 @@ basic3: [
   "Religion Studies",
   "Physical And Health Education",
   "Cultural And Creative Art",
-  "Yoruba",
   "Computer Science",
   "Prevocational Studies (PVS)",
   "Basic Science & Tech",
@@ -195,7 +191,6 @@ basic4: [
   "Religion Studies",
   "Physical And Health Education",
   "Cultural And Creative Art",
-  "Yoruba",
   "Computer Science",
   "Prevocational Studies (PVS)",
   "Basic Science & Tech",
@@ -213,7 +208,6 @@ basic5: [
   "Religion Studies",
   "Physical And Health Education",
   "Cultural And Creative Art",
-  "Yoruba",
   "Computer Science",
   "Prevocational Studies (PVS)",
   "Basic Science & Tech",
@@ -277,27 +271,6 @@ jss3: [
   "Digital Technology",
   "Phonic",
   "Dictation"
-],
-
-sss1: [
-  "General Mathematics","Visual Arts","English Language","Christian Religious studies",
-  "Physics","Marketing","Chemistry","Commerce",
-  "Biology","Literature-in-English","Government","Digital Technology",
-  "Economics","Entrepreneurship","Accounting"
-],
-
-sss2: [
-  "General Mathematics","Visual Arts","English Language","Christian Religious studies",
-  "Physics","Marketing","Chemistry","Commerce",
-  "Biology","Literature-in-English","Government","Digital Technology",
-  "Economics","Entrepreneurship","Accounting"
-],
-
-sss3: [
-  "General Mathematics","Visual Arts","English Language","Christian Religious studies",
-  "Physics","Marketing","Chemistry","Commerce",
-  "Biology","Literature-in-English","Government","Digital Technology",
-  "Economics","Entrepreneurship","Accounting"
 ]
 };
 
