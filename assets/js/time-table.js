@@ -197,6 +197,7 @@ basic4: [
   "Mathematics",
   "English Language",
   "Phonics",
+  "Solar",
   "Verbal Reasoning",
   "Quantitative Reasoning",
   "Dictation"
@@ -216,6 +217,7 @@ basic5: [
   "Phonics",
   "Verbal Reasoning",
   "Quantitative Reasoning",
+  "Solar",
   "Dictation"
 ],
 
@@ -232,6 +234,7 @@ jss1: [
   "Intermediate Science",
   "Mathematics",
   "English Language",
+  "Solar",
   "Digital Technology",
   "Phonic",
   "Dictation"
@@ -249,6 +252,7 @@ jss2: [
   "Entrepreneurship",
   "Intermediate Science",
   "Mathematics",
+  "Solar",
   "English Language",
   "Digital Technology",
   "Phonic",
@@ -270,7 +274,8 @@ jss3: [
   "English Language",
   "Digital Technology",
   "Phonic",
-  "Dictation"
+  "Dictation",
+  "Solar"
 ],
 
 sss1: [
