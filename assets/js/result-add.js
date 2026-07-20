@@ -1892,7 +1892,7 @@ tr:nth-child(even) td {
         printWindow.document.title = fileTitle;
 
        printWindow.document.getElementById("classTeacherSignatureImg").src =
-    "assets/images/auth/test 2.png";
+    "assets/images/auth/Life Point Promoted.png";
 
     printWindow.document.getElementById("proprietorSignatureImg").src =
     "assets/images/auth/test 1.png";
